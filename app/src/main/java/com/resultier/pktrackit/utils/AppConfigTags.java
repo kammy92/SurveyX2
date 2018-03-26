@@ -51,6 +51,13 @@ public class AppConfigTags {
     public static final String PRODUCT_ID = "product_id";
     public static final String PRODUCT_CODE = "product_code";
     
+    public static final String WEEK_1 = "week_1";
+    public static final String WEEK_2 = "week_2";
+    public static final String WEEK_3 = "week_3";
+    public static final String WEEK_4 = "week_4";
+    public static final String WEEK_5 = "week_5";
+    public static final String WEEK_6 = "week_6";
+    
     
     public static final String DAY_NUMBER = "day_number";
     public static final String DATE = "date";

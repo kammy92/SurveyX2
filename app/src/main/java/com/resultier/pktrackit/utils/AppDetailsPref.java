@@ -26,6 +26,14 @@ public class AppDetailsPref {
     public static String BUTTON4_POUCHES = "button4_pouches";
     
     
+    public static String WEEK_1 = "week_1";
+    public static String WEEK_2 = "week_2";
+    public static String WEEK_3 = "week_3";
+    public static String WEEK_4 = "week_4";
+    public static String WEEK_5 = "week_5";
+    public static String WEEK_6 = "week_6";
+    
+    
     private static AppDetailsPref appDetailsPref;
     private String APP_DETAILS = "APP_DETAILS";
     

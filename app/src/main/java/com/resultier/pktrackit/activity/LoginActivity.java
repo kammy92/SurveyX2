@@ -197,7 +197,15 @@ public class LoginActivity extends AppCompatActivity {
                                         appDetailsPref.putIntPref (LoginActivity.this, AppDetailsPref.SURVEY_DAY_ELAPSED, jsonObj.getInt (AppConfigTags.SURVEY_DAY_ELAPSED));
                                         appDetailsPref.putIntPref (LoginActivity.this, AppDetailsPref.PRODUCT_ID, jsonObj.getInt (AppConfigTags.PRODUCT_ID));
                                         appDetailsPref.putStringPref (LoginActivity.this, AppDetailsPref.PRODUCT_CODE, jsonObj.getString (AppConfigTags.PRODUCT_CODE));
-                                        
+    
+                                        appDetailsPref.putStringPref (LoginActivity.this, AppDetailsPref.WEEK_1, jsonObj.getString (AppConfigTags.WEEK_1));
+                                        appDetailsPref.putStringPref (LoginActivity.this, AppDetailsPref.WEEK_2, jsonObj.getString (AppConfigTags.WEEK_2));
+                                        appDetailsPref.putStringPref (LoginActivity.this, AppDetailsPref.WEEK_3, jsonObj.getString (AppConfigTags.WEEK_3));
+                                        appDetailsPref.putStringPref (LoginActivity.this, AppDetailsPref.WEEK_4, jsonObj.getString (AppConfigTags.WEEK_4));
+                                        appDetailsPref.putStringPref (LoginActivity.this, AppDetailsPref.WEEK_5, jsonObj.getString (AppConfigTags.WEEK_5));
+                                        appDetailsPref.putStringPref (LoginActivity.this, AppDetailsPref.WEEK_6, jsonObj.getString (AppConfigTags.WEEK_6));
+    
+    
                                         Intent intent = new Intent (LoginActivity.this, MainActivity.class);
                                         startActivity (intent);
                                         finish ();

@@ -5,7 +5,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
@@ -44,7 +42,6 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Hashtable;
-import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -64,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
     RelativeLayout rlStartSurvey2;
     
     RelativeLayout rlLabReport;
+    RelativeLayout rlLogout2;
     RelativeLayout rlSurveyComplete;
     RelativeLayout rlLogout;
     
@@ -107,7 +105,8 @@ public class MainActivity extends AppCompatActivity {
         rlLabReport = (RelativeLayout) findViewById (R.id.rlLabReport);
         rlSurveyComplete = (RelativeLayout) findViewById (R.id.rlSurveyComplete);
         rlLogout = (RelativeLayout) findViewById (R.id.rlLogout);
-        
+        rlLogout2 = (RelativeLayout) findViewById (R.id.rlLogout2);
+    
         rlButton1 = (RelativeLayout) findViewById (R.id.rlButton1);
         rlButton2 = (RelativeLayout) findViewById (R.id.rlButton2);
         rlButton3 = (RelativeLayout) findViewById (R.id.rlButton3);
@@ -259,6 +258,7 @@ public class MainActivity extends AppCompatActivity {
         ivPlus3.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick (View v) {
+/*
                 List<String> productList = new ArrayList<> ();
                 productList.add (getResources ().getString (R.string.question7a1));
                 productList.add (getResources ().getString (R.string.question7a2));
@@ -309,8 +309,11 @@ public class MainActivity extends AppCompatActivity {
                             }
                         })
                         .show ();
+*/
                 
-                
+                button3++;
+                appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.BUTTON3, button3);
+                tvButton3.setText (String.valueOf (button3));
             }
         });
         
@@ -374,8 +377,30 @@ public class MainActivity extends AppCompatActivity {
                 overridePendingTransition (R.anim.slide_in_left, R.anim.slide_out_right);
             }
         });
+        
+        rlLogout2.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.USER_NAME, "");
+                appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.USER_MOBILE, "");
+                appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.USER_LOGIN_KEY, "");
+                appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.SURVEY_ID, 0);
+                appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.SURVEY_NUMBER, "");
+                appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.SURVEY_STATUS, 0);
+                appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.SURVEY_DAY_ELAPSED, 0);
+                appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.PRODUCT_ID, 0);
+                appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.PRODUCT_CODE, "");
+                appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.BUTTON1, 0);
+                appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.BUTTON2, 0);
+                appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.BUTTON3, 0);
+                appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.BUTTON4, 0);
+                Intent intent = new Intent (MainActivity.this, LoginActivity.class);
+                startActivity (intent);
+                finish ();
+                overridePendingTransition (R.anim.slide_in_left, R.anim.slide_out_right);
+            }
+        });
     }
-    
     
     private void isLogin () {
         if (appDetailsPref.getStringPref (MainActivity.this, AppDetailsPref.USER_LOGIN_KEY).length () == 0) {
@@ -390,6 +415,7 @@ public class MainActivity extends AppCompatActivity {
     
     private void initApplication () {
         if (NetworkConnection.isNetworkAvailable (this)) {
+            Utils.showProgressDialog (this, progressDialog, getResources ().getString (R.string.progress_dialog_text_please_wait), true);
             Utils.showLog (Log.INFO, AppConfigTags.URL, AppConfigURL.INIT_APPLICATION, true);
             StringRequest strRequest = new StringRequest (Request.Method.POST, AppConfigURL.INIT_APPLICATION,
                     new Response.Listener<String> () {
@@ -447,19 +473,23 @@ public class MainActivity extends AppCompatActivity {
                                                 break;
                                         }
                                     }
+                                    progressDialog.dismiss ();
                                 } catch (Exception e) {
                                     e.printStackTrace ();
+                                    progressDialog.dismiss ();
                                 }
                             } else {
                                 Utils.showLog (Log.WARN, AppConfigTags.SERVER_RESPONSE, AppConfigTags.DIDNT_RECEIVE_ANY_DATA_FROM_SERVER, true);
+                                progressDialog.dismiss ();
                             }
+                            progressDialog.dismiss ();
                         }
                     },
                     new Response.ErrorListener () {
                         @Override
                         public void onErrorResponse (VolleyError error) {
-                            
                             Utils.showLog (Log.ERROR, AppConfigTags.VOLLEY_ERROR, error.toString (), true);
+                            progressDialog.dismiss ();
                         }
                     }) {
                 

@@ -63,6 +63,8 @@ public class LoginActivity extends AppCompatActivity {
         appDetailsPref = AppDetailsPref.getInstance ();
         progressDialog = new ProgressDialog (this);
         Utils.setTypefaceToAllViews (this, tvStartSurvey);
+        etUserName.setText (appDetailsPref.getStringPref (this, AppDetailsPref.USER_LOGIN_ID));
+        etPassword.setText (appDetailsPref.getStringPref (this, AppDetailsPref.USER_LOGIN_PASS));
     }
     
     private void initView () {
@@ -187,6 +189,8 @@ public class LoginActivity extends AppCompatActivity {
                                         appDetailsPref.putStringPref (LoginActivity.this, AppDetailsPref.USER_NAME, jsonObj.getString (AppConfigTags.USER_NAME));
                                         appDetailsPref.putStringPref (LoginActivity.this, AppDetailsPref.USER_MOBILE, jsonObj.getString (AppConfigTags.USER_MOBILE));
                                         appDetailsPref.putStringPref (LoginActivity.this, AppDetailsPref.USER_LOGIN_KEY, jsonObj.getString (AppConfigTags.USER_LOGIN_KEY));
+                                        appDetailsPref.putStringPref (LoginActivity.this, AppDetailsPref.USER_LOGIN_ID, jsonObj.getString (AppConfigTags.USER_LOGIN_ID));
+                                        appDetailsPref.putStringPref (LoginActivity.this, AppDetailsPref.USER_LOGIN_PASS, jsonObj.getString (AppConfigTags.USER_LOGIN_PASS));
                                         appDetailsPref.putIntPref (LoginActivity.this, AppDetailsPref.SURVEY_ID, jsonObj.getInt (AppConfigTags.SURVEY_ID));
                                         appDetailsPref.putStringPref (LoginActivity.this, AppDetailsPref.SURVEY_NUMBER, jsonObj.getString (AppConfigTags.SURVEY_NUMBER));
                                         appDetailsPref.putIntPref (LoginActivity.this, AppDetailsPref.SURVEY_STATUS, jsonObj.getInt (AppConfigTags.SURVEY_STATUS));

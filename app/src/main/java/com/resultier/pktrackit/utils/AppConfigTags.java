@@ -39,6 +39,8 @@ public class AppConfigTags {
     public static final String LOGIN_PASSWORD = "login_password";
     public static final String USER_NAME = "user_name";
     public static final String USER_LOGIN_KEY = "user_login_key";
+    public static final String USER_LOGIN_ID = "user_login_id";
+    public static final String USER_LOGIN_PASS = "user_login_pass";
     public static final String USER_MOBILE = "user_mobile";
     
     public static final String SURVEY_ID = "survey_id";

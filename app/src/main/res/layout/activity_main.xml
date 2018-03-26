@@ -94,7 +94,6 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/toolbar1"
             android:animateLayoutChanges="true">
-
             <RelativeLayout
                 android:id="@+id/rlInstruction"
                 android:layout_width="match_parent"
@@ -553,10 +552,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_above="@+id/rlLogout2"
                     android:layout_margin="@dimen/activity_margin"
                     android:gravity="center"
                     android:orientation="vertical">
-
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -570,8 +569,31 @@
                         android:text="Please return to the facility tomorrow (Monday) to receive new product. You MUST bring all cans of product with you to the facility."
                         android:textColor="@color/primary_text"
                         android:textSize="@dimen/text_size_medium"/>
-
                 </LinearLayout>
+                <RelativeLayout
+                    android:id="@+id/rlLogout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/primary_text">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/activity_margin"
+                        android:layout_marginRight="@dimen/activity_margin"
+                        android:src="@drawable/ic_right_arrow"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/activity_margin"
+                        android:text="LOGOUT"
+                        android:textColor="@color/text_color_white"
+                        android:textSize="@dimen/text_size_small"
+                        android:textStyle="bold"/>
+                </RelativeLayout>
             </RelativeLayout>
             <RelativeLayout
                 android:id="@+id/rlSurveyComplete"
@@ -581,6 +603,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_above="@+id/rlLogout"
                     android:layout_margin="@dimen/activity_margin"
                     android:gravity="center"
                     android:orientation="vertical">
@@ -616,9 +639,6 @@
                         android:textStyle="bold"/>
                 </RelativeLayout>
             </RelativeLayout>
-
         </RelativeLayout>
     </RelativeLayout>
-
-
 </android.support.design.widget.CoordinatorLayout>

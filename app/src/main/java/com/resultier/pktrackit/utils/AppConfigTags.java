@@ -47,6 +47,7 @@ public class AppConfigTags {
     public static final String SURVEY_NUMBER = "survey_number";
     public static final String SURVEY_STATUS = "survey_status";
     public static final String SURVEY_DAY_ELAPSED = "survey_days_elapsed";
+    public static final String SURVEY_STARTED_AT = "survey_started_at";
     
     public static final String PRODUCT_ID = "product_id";
     public static final String PRODUCT_CODE = "product_code";

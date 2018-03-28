@@ -80,11 +80,11 @@ public class LoginActivity extends AppCompatActivity {
         tvStartSurvey.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick (View view) {
-                SpannableString s1 = new SpannableString (getResources ().getString (R.string.please_enter_user_id));
+                SpannableString s1 = new SpannableString (getResources ().getString (R.string.please_enter_serial_number));
                 s1.setSpan (new TypefaceSpan (LoginActivity.this, Constants.font_name), 0, s1.length (), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                SpannableString s2 = new SpannableString (getResources ().getString (R.string.please_enter_password));
+                SpannableString s2 = new SpannableString (getResources ().getString (R.string.please_enter_pin));
                 s2.setSpan (new TypefaceSpan (LoginActivity.this, Constants.font_name), 0, s2.length (), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                SpannableString s3 = new SpannableString (getResources ().getString (R.string.please_enter_survey_id));
+                SpannableString s3 = new SpannableString (getResources ().getString (R.string.please_enter_product_code));
                 s3.setSpan (new TypefaceSpan (LoginActivity.this, Constants.font_name), 0, s3.length (), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
     
                 if (etUserName.getText ().toString ().length () == 0) {

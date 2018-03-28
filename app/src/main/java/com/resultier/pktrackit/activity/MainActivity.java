@@ -65,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
     RelativeLayout rlSurveyComplete;
     RelativeLayout rlLogout;
     
+    RelativeLayout rlDayComplete;
+    
+    
     int button1 = 0; // Pouch Product Provided
     int button2 = 0; // Your Own Loose Product
     int button3 = 0; // Different Tobacco Product
@@ -106,7 +109,8 @@ public class MainActivity extends AppCompatActivity {
         rlSurveyComplete = (RelativeLayout) findViewById (R.id.rlSurveyComplete);
         rlLogout = (RelativeLayout) findViewById (R.id.rlLogout);
         rlLogout2 = (RelativeLayout) findViewById (R.id.rlLogout2);
-    
+        rlDayComplete = (RelativeLayout) findViewById (R.id.rlDayComplete);
+        
         rlButton1 = (RelativeLayout) findViewById (R.id.rlButton1);
         rlButton2 = (RelativeLayout) findViewById (R.id.rlButton2);
         rlButton3 = (RelativeLayout) findViewById (R.id.rlButton3);
@@ -169,8 +173,11 @@ public class MainActivity extends AppCompatActivity {
         }
         
         Calendar c = Calendar.getInstance ();
-        SimpleDateFormat df = new SimpleDateFormat ("dd/MM/yyyy", Locale.US);
+        SimpleDateFormat df = new SimpleDateFormat ("dd-MMM-yyyy", Locale.US);
         tvDate.setText (df.format (c.getTime ()));
+
+//        SimpleDateFormat df2 = new SimpleDateFormat ("yyyy-MM-dd", Locale.US);
+//        Log.e ("karman", "" + Utils.getDaysBetweenDates (Utils.convertTimeFormat (appDetailsPref.getStringPref (this, AppDetailsPref.SURVEY_STARTED_AT),"yyyy-MM-dd HH:mm:ss","yyyy-MM-dd"), df2.format (c.getTime ())));
     }
     
     private void initListener () {
@@ -365,6 +372,7 @@ public class MainActivity extends AppCompatActivity {
                 appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.SURVEY_NUMBER, "");
                 appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.SURVEY_STATUS, 0);
                 appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.SURVEY_DAY_ELAPSED, 0);
+                appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.SURVEY_STARTED_AT, "");
                 appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.PRODUCT_ID, 0);
                 appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.PRODUCT_CODE, "");
                 appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.BUTTON1, 0);
@@ -388,6 +396,7 @@ public class MainActivity extends AppCompatActivity {
                 appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.SURVEY_NUMBER, "");
                 appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.SURVEY_STATUS, 0);
                 appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.SURVEY_DAY_ELAPSED, 0);
+                appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.SURVEY_STARTED_AT, "");
                 appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.PRODUCT_ID, 0);
                 appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.PRODUCT_CODE, "");
                 appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.BUTTON1, 0);
@@ -434,7 +443,6 @@ public class MainActivity extends AppCompatActivity {
                                             tvDay.setText ("Day : " + (appDetailsPref.getIntPref (MainActivity.this, AppDetailsPref.SURVEY_DAY_ELAPSED) + 1));
                                         }
                                         
-                                        
                                         switch (jsonObj.getInt (AppConfigTags.SURVEY_STATUS)) {
                                             case 0:
                                                 rlInstructions.setVisibility (View.VISIBLE);
@@ -442,13 +450,38 @@ public class MainActivity extends AppCompatActivity {
                                                 rlConclusion.setVisibility (View.GONE);
                                                 rlLabReport.setVisibility (View.GONE);
                                                 rlSurveyComplete.setVisibility (View.GONE);
+                                                rlDayComplete.setVisibility (View.GONE);
                                                 break;
                                             case 1:
+//                                                if (jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT) != null) {
+//                                                    appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.SURVEY_STARTED_AT, jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT));
+//                                                    Calendar c = Calendar.getInstance ();
+//                                                    SimpleDateFormat df2 = new SimpleDateFormat ("yyyy-MM-dd", Locale.US);
+//                                                    Log.e ("karman", "diff time : " + (Utils.getDaysBetweenDates (Utils.convertTimeFormat (jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT), "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd"), df2.format (c.getTime ())) + 1));
+//                                                    Log.e ("karman", "days elapsed  : " + jsonObj.getInt (AppConfigTags.SURVEY_DAY_ELAPSED));
+//                                                    if ((Utils.getDaysBetweenDates (Utils.convertTimeFormat (jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT), "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd"), df2.format (c.getTime ())) + 1) <= jsonObj.getInt (AppConfigTags.SURVEY_DAY_ELAPSED)) {
+//                                                        rlInstructions.setVisibility (View.GONE);
+//                                                        rlMain.setVisibility (View.GONE);
+//                                                        rlConclusion.setVisibility (View.GONE);
+//                                                        rlLabReport.setVisibility (View.GONE);
+//                                                        rlSurveyComplete.setVisibility (View.GONE);
+//                                                        rlDayComplete.setVisibility (View.VISIBLE);
+//                                                    } else{
+//                                                        rlInstructions.setVisibility (View.GONE);
+//                                                        rlMain.setVisibility (View.VISIBLE);
+//                                                        rlConclusion.setVisibility (View.GONE);
+//                                                        rlLabReport.setVisibility (View.GONE);
+//                                                        rlSurveyComplete.setVisibility (View.GONE);
+//                                                        rlDayComplete.setVisibility (View.GONE);
+//                                                    }
+//                                                } else {
                                                 rlInstructions.setVisibility (View.GONE);
                                                 rlMain.setVisibility (View.VISIBLE);
                                                 rlConclusion.setVisibility (View.GONE);
                                                 rlLabReport.setVisibility (View.GONE);
                                                 rlSurveyComplete.setVisibility (View.GONE);
+                                                rlDayComplete.setVisibility (View.GONE);
+//                                                }
                                                 break;
                                             case 2:
                                                 rlInstructions.setVisibility (View.GONE);
@@ -456,6 +489,7 @@ public class MainActivity extends AppCompatActivity {
                                                 rlConclusion.setVisibility (View.VISIBLE);
                                                 rlLabReport.setVisibility (View.GONE);
                                                 rlSurveyComplete.setVisibility (View.GONE);
+                                                rlDayComplete.setVisibility (View.GONE);
                                                 break;
                                             case 3:
                                                 rlInstructions.setVisibility (View.GONE);
@@ -463,6 +497,7 @@ public class MainActivity extends AppCompatActivity {
                                                 rlConclusion.setVisibility (View.GONE);
                                                 rlLabReport.setVisibility (View.VISIBLE);
                                                 rlSurveyComplete.setVisibility (View.GONE);
+                                                rlDayComplete.setVisibility (View.GONE);
                                                 break;
                                             case 4:
                                                 rlInstructions.setVisibility (View.GONE);
@@ -470,6 +505,7 @@ public class MainActivity extends AppCompatActivity {
                                                 rlConclusion.setVisibility (View.GONE);
                                                 rlLabReport.setVisibility (View.GONE);
                                                 rlSurveyComplete.setVisibility (View.VISIBLE);
+                                                rlDayComplete.setVisibility (View.GONE);
                                                 break;
                                         }
                                     }

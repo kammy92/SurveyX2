@@ -441,6 +441,8 @@ public class MainActivity extends AppCompatActivity {
                                         if (jsonObj.getInt (AppConfigTags.SURVEY_DAY_ELAPSED) < 7) {
                                             appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.SURVEY_DAY_ELAPSED, jsonObj.getInt (AppConfigTags.SURVEY_DAY_ELAPSED));
                                             tvDay.setText ("Day : " + (appDetailsPref.getIntPref (MainActivity.this, AppDetailsPref.SURVEY_DAY_ELAPSED) + 1));
+                                        } else {
+                                            tvDay.setVisibility (View.GONE);
                                         }
                                         
                                         switch (jsonObj.getInt (AppConfigTags.SURVEY_STATUS)) {

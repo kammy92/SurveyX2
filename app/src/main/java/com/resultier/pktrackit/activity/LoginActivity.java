@@ -205,6 +205,26 @@ public class LoginActivity extends AppCompatActivity {
                                         appDetailsPref.putStringPref (LoginActivity.this, AppDetailsPref.WEEK_5, jsonObj.getString (AppConfigTags.WEEK_5));
                                         appDetailsPref.putStringPref (LoginActivity.this, AppDetailsPref.WEEK_6, jsonObj.getString (AppConfigTags.WEEK_6));
     
+                                        appDetailsPref.putIntPref (LoginActivity.this, AppDetailsPref.WEEK_NUMBER, 1);
+    
+                                        if (jsonObj.getString (AppConfigTags.PRODUCT_CODE).equalsIgnoreCase (jsonObj.getString (AppConfigTags.WEEK_1))) {
+                                            appDetailsPref.putIntPref (LoginActivity.this, AppDetailsPref.WEEK_NUMBER, 1);
+                                        }
+                                        if (jsonObj.getString (AppConfigTags.PRODUCT_CODE).equalsIgnoreCase (jsonObj.getString (AppConfigTags.WEEK_2))) {
+                                            appDetailsPref.putIntPref (LoginActivity.this, AppDetailsPref.WEEK_NUMBER, 2);
+                                        }
+                                        if (jsonObj.getString (AppConfigTags.PRODUCT_CODE).equalsIgnoreCase (jsonObj.getString (AppConfigTags.WEEK_3))) {
+                                            appDetailsPref.putIntPref (LoginActivity.this, AppDetailsPref.WEEK_NUMBER, 3);
+                                        }
+                                        if (jsonObj.getString (AppConfigTags.PRODUCT_CODE).equalsIgnoreCase (jsonObj.getString (AppConfigTags.WEEK_4))) {
+                                            appDetailsPref.putIntPref (LoginActivity.this, AppDetailsPref.WEEK_NUMBER, 4);
+                                        }
+                                        if (jsonObj.getString (AppConfigTags.PRODUCT_CODE).equalsIgnoreCase (jsonObj.getString (AppConfigTags.WEEK_5))) {
+                                            appDetailsPref.putIntPref (LoginActivity.this, AppDetailsPref.WEEK_NUMBER, 5);
+                                        }
+                                        if (jsonObj.getString (AppConfigTags.PRODUCT_CODE).equalsIgnoreCase (jsonObj.getString (AppConfigTags.WEEK_6))) {
+                                            appDetailsPref.putIntPref (LoginActivity.this, AppDetailsPref.WEEK_NUMBER, 6);
+                                        }
     
                                         Intent intent = new Intent (LoginActivity.this, MainActivity.class);
                                         startActivity (intent);

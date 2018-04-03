@@ -34,6 +34,8 @@ public class AppDetailsPref {
     public static String WEEK_5 = "week_5";
     public static String WEEK_6 = "week_6";
     
+    public static String WEEK_NUMBER = "week_number";
+    
     
     private static AppDetailsPref appDetailsPref;
     private String APP_DETAILS = "APP_DETAILS";

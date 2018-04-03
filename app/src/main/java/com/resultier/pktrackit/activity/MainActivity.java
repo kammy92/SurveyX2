@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
         
         tvProductCode.setText ("Prod # " + appDetailsPref.getStringPref (this, AppDetailsPref.PRODUCT_CODE));
         if (appDetailsPref.getIntPref (this, AppDetailsPref.SURVEY_DAY_ELAPSED) < 7) {
-            tvDay.setText ("Day : " + (appDetailsPref.getIntPref (this, AppDetailsPref.SURVEY_DAY_ELAPSED) + 1));
+            tvDay.setText ("Day : " + (appDetailsPref.getIntPref (this, AppDetailsPref.SURVEY_DAY_ELAPSED) + 1) + " (Week " + appDetailsPref.getIntPref (MainActivity.this, AppDetailsPref.WEEK_NUMBER) + ")");
         } else {
             tvDay.setVisibility (View.GONE);
         }
@@ -440,7 +440,7 @@ public class MainActivity extends AppCompatActivity {
                                         appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.SURVEY_STATUS, jsonObj.getInt (AppConfigTags.SURVEY_STATUS));
                                         if (jsonObj.getInt (AppConfigTags.SURVEY_DAY_ELAPSED) < 7) {
                                             appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.SURVEY_DAY_ELAPSED, jsonObj.getInt (AppConfigTags.SURVEY_DAY_ELAPSED));
-                                            tvDay.setText ("Day : " + (appDetailsPref.getIntPref (MainActivity.this, AppDetailsPref.SURVEY_DAY_ELAPSED) + 1));
+                                            tvDay.setText ("Day : " + (appDetailsPref.getIntPref (MainActivity.this, AppDetailsPref.SURVEY_DAY_ELAPSED) + 1) + " (Week " + appDetailsPref.getIntPref (MainActivity.this, AppDetailsPref.WEEK_NUMBER) + ")");
                                         } else {
                                             tvDay.setVisibility (View.GONE);
                                         }

@@ -180,6 +180,89 @@
                         android:text="@string/question9b"
                         android:textColor="@color/primary_text"
                         android:textSize="@dimen/text_size_medium"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/activity_margin_small"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+                            <RadioButton
+                                android:id="@+id/rbNotAtAll1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Not at all"
+                                android:textColor="@color/primary_text"/>
+                            <RadioButton
+                                android:id="@+id/rbVeryLittle1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Very little"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+
+
+                            <RadioButton
+                                android:id="@+id/rbALittle1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="A little"
+                                android:textColor="@color/primary_text"/>
+
+
+                            <RadioButton
+                                android:id="@+id/rbModerately1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Moderately"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+                            <RadioButton
+                                android:id="@+id/rbALot1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="A lot"
+                                android:textColor="@color/primary_text"/>
+                            <RadioButton
+                                android:id="@+id/rbQuiteALot1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Quite a lot"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+                            <RadioButton
+                                android:id="@+id/rbExtremely1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Extremely"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                    </LinearLayout>
                     <EditText
                         android:id="@+id/etAnswer9a"
                         android:layout_width="match_parent"
@@ -192,7 +275,8 @@
                         android:padding="@dimen/activity_margin_small"
                         android:textColor="@color/primary_text"
                         android:textSize="@dimen/text_size_medium"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
                 </LinearLayout>
                 <LinearLayout
                     android:id="@+id/llAnswer9b"
@@ -213,6 +297,90 @@
                         android:text="@string/question9c"
                         android:textColor="@color/primary_text"
                         android:textSize="@dimen/text_size_medium"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/activity_margin_small"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+                            <RadioButton
+                                android:id="@+id/rbNotAtAll2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Not at all"
+                                android:textColor="@color/primary_text"/>
+                            <RadioButton
+                                android:id="@+id/rbVeryLittle2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Very little"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+
+
+                            <RadioButton
+                                android:id="@+id/rbALittle2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="A little"
+                                android:textColor="@color/primary_text"/>
+
+
+                            <RadioButton
+                                android:id="@+id/rbModerately2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Moderately"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+                            <RadioButton
+                                android:id="@+id/rbALot2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="A lot"
+                                android:textColor="@color/primary_text"/>
+
+                            <RadioButton
+                                android:id="@+id/rbQuiteALot2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Quite a lot"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+                            <RadioButton
+                                android:id="@+id/rbExtremely2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Extremely"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                    </LinearLayout>
                     <EditText
                         android:id="@+id/etAnswer9b"
                         android:layout_width="match_parent"
@@ -225,7 +393,8 @@
                         android:padding="@dimen/activity_margin_small"
                         android:textColor="@color/primary_text"
                         android:textSize="@dimen/text_size_medium"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
                 </LinearLayout>
                 <LinearLayout
                     android:id="@+id/llAnswer9c"
@@ -246,6 +415,90 @@
                         android:text="@string/question9d"
                         android:textColor="@color/primary_text"
                         android:textSize="@dimen/text_size_medium"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/activity_margin_small"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+                            <RadioButton
+                                android:id="@+id/rbNotAtAll3"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Not at all"
+                                android:textColor="@color/primary_text"/>
+                            <RadioButton
+                                android:id="@+id/rbVeryLittle3"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Very little"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+
+
+                            <RadioButton
+                                android:id="@+id/rbALittle3"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="A little"
+                                android:textColor="@color/primary_text"/>
+
+
+                            <RadioButton
+                                android:id="@+id/rbModerately3"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Moderately"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+                            <RadioButton
+                                android:id="@+id/rbALot3"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="A lot"
+                                android:textColor="@color/primary_text"/>
+
+                            <RadioButton
+                                android:id="@+id/rbQuiteALot3"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Quite a lot"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+                            <RadioButton
+                                android:id="@+id/rbExtremely3"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Extremely"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                    </LinearLayout>
                     <EditText
                         android:id="@+id/etAnswer9c"
                         android:layout_width="match_parent"
@@ -258,7 +511,8 @@
                         android:padding="@dimen/activity_margin_small"
                         android:textColor="@color/primary_text"
                         android:textSize="@dimen/text_size_medium"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
                 </LinearLayout>
                 <LinearLayout
                     android:id="@+id/llAnswer9d"
@@ -279,6 +533,86 @@
                         android:text="@string/question9e"
                         android:textColor="@color/primary_text"
                         android:textSize="@dimen/text_size_medium"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/activity_margin_small"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+                            <RadioButton
+                                android:id="@+id/rbNotAtAll4"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Not at all"
+                                android:textColor="@color/primary_text"/>
+                            <RadioButton
+                                android:id="@+id/rbVeryLittle4"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Very little"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+                            <RadioButton
+                                android:id="@+id/rbALittle4"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="A little"
+                                android:textColor="@color/primary_text"/>
+                            <RadioButton
+                                android:id="@+id/rbModerately4"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Moderately"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+                            <RadioButton
+                                android:id="@+id/rbALot4"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="A lot"
+                                android:textColor="@color/primary_text"/>
+
+                            <RadioButton
+                                android:id="@+id/rbQuiteALot4"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Quite a lot"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+                            <RadioButton
+                                android:id="@+id/rbExtremely4"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Extremely"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                    </LinearLayout>
                     <EditText
                         android:id="@+id/etAnswer9d"
                         android:layout_width="match_parent"
@@ -291,7 +625,8 @@
                         android:padding="@dimen/activity_margin_small"
                         android:textColor="@color/primary_text"
                         android:textSize="@dimen/text_size_medium"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
                 </LinearLayout>
                 <LinearLayout
                     android:id="@+id/llAnswer9e"
@@ -312,6 +647,90 @@
                         android:text="@string/question9f"
                         android:textColor="@color/primary_text"
                         android:textSize="@dimen/text_size_medium"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/activity_margin_small"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+                            <RadioButton
+                                android:id="@+id/rbNotAtAll5"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Not at all"
+                                android:textColor="@color/primary_text"/>
+                            <RadioButton
+                                android:id="@+id/rbVeryLittle5"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Very little"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+
+
+                            <RadioButton
+                                android:id="@+id/rbALittle5"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="A little"
+                                android:textColor="@color/primary_text"/>
+
+
+                            <RadioButton
+                                android:id="@+id/rbModerately5"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Moderately"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+                            <RadioButton
+                                android:id="@+id/rbALot5"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="A lot"
+                                android:textColor="@color/primary_text"/>
+
+                            <RadioButton
+                                android:id="@+id/rbQuiteALot5"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Quite a lot"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+                            <RadioButton
+                                android:id="@+id/rbExtremely5"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Extremely"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                    </LinearLayout>
                     <EditText
                         android:id="@+id/etAnswer9e"
                         android:layout_width="match_parent"
@@ -324,7 +743,8 @@
                         android:padding="@dimen/activity_margin_small"
                         android:textColor="@color/primary_text"
                         android:textSize="@dimen/text_size_medium"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
                 </LinearLayout>
                 <LinearLayout
                     android:id="@+id/llAnswer9f"
@@ -346,6 +766,89 @@
                         android:text="@string/question9g"
                         android:textColor="@color/primary_text"
                         android:textSize="@dimen/text_size_medium"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/activity_margin_small"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+                            <RadioButton
+                                android:id="@+id/rbNotAtAll6"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Not at all"
+                                android:textColor="@color/primary_text"/>
+                            <RadioButton
+                                android:id="@+id/rbVeryLittle6"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Very little"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+
+
+                            <RadioButton
+                                android:id="@+id/rbALittle6"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="A little"
+                                android:textColor="@color/primary_text"/>
+                            <RadioButton
+                                android:id="@+id/rbModerately6"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Moderately"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+                            <RadioButton
+                                android:id="@+id/rbALot6"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="A lot"
+                                android:textColor="@color/primary_text"/>
+
+                            <RadioButton
+                                android:id="@+id/rbQuiteALot6"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Quite a lot"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+                            <RadioButton
+                                android:id="@+id/rbExtremely6"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Extremely"
+                                android:textColor="@color/primary_text"/>
+                        </LinearLayout>
+                    </LinearLayout>
                     <EditText
                         android:id="@+id/etAnswer9f"
                         android:layout_width="match_parent"
@@ -358,9 +861,9 @@
                         android:padding="@dimen/activity_margin_small"
                         android:textColor="@color/primary_text"
                         android:textSize="@dimen/text_size_medium"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
                 </LinearLayout>
-
             </LinearLayout>
         </ScrollView>
         <TextView

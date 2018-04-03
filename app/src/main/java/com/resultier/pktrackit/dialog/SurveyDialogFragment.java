@@ -37,10 +37,12 @@ import com.resultier.pktrackit.utils.Utils;
 
 import org.json.JSONObject;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Locale;
@@ -80,6 +82,10 @@ public class SurveyDialogFragment extends DialogFragment {
     String answer8 = "";
     String answer8a = "";
     String answer8b = "";
+    
+    String wakeup_time = "";
+    String first_use_time = "";
+    
     AppDetailsPref appDetailsPref;
     private ImageView ivCancel;
     private EditText etAnswer1;
@@ -356,6 +362,7 @@ public class SurveyDialogFragment extends DialogFragment {
                 TimePickerDialog timePickerDialog = new TimePickerDialog (getActivity (), new TimePickerDialog.OnTimeSetListener () {
                     @Override
                     public void onTimeSet (TimePicker view, int hourOfDay, int minute) {
+                        wakeup_time = String.format (Locale.US, "%02d", hourOfDay) + ":" + String.format (Locale.US, "%02d", minute);
                         if (hourOfDay >= 12) {
                             if (hourOfDay == 12) {
                                 answer1 = String.format (Locale.US, "%02d", hourOfDay) + ":" + String.format (Locale.US, "%02d", minute) + " PM";
@@ -381,6 +388,7 @@ public class SurveyDialogFragment extends DialogFragment {
                 TimePickerDialog timePickerDialog = new TimePickerDialog (getActivity (), new TimePickerDialog.OnTimeSetListener () {
                     @Override
                     public void onTimeSet (TimePicker view, int hourOfDay, int minute) {
+                        first_use_time = String.format (Locale.US, "%02d", hourOfDay) + ":" + String.format (Locale.US, "%02d", minute);
                         if (hourOfDay >= 12) {
                             if (hourOfDay == 12) {
                                 answer2 = String.format (Locale.US, "%02d", hourOfDay) + ":" + String.format (Locale.US, "%02d", minute) + " PM";
@@ -578,7 +586,7 @@ public class SurveyDialogFragment extends DialogFragment {
                 answer6d = etAnswer6d.getText ().toString ().trim ();
                 answer7c = etAnswer7c.getText ().toString ().trim ();
                 answer8b = etAnswer8b.getText ().toString ().trim ();
-
+    
                 if (cbAnswer7aList.size () == 1) {
                     answer7a = cbAnswer7aList.get (0);
                 } else {
@@ -590,7 +598,7 @@ public class SurveyDialogFragment extends DialogFragment {
                         }
                     }
                 }
-                
+
 //                answer7a = android.text.TextUtils.join (",", cbAnswer7aList);
                 
                 if (answer1.length () == 0) {
@@ -703,6 +711,11 @@ public class SurveyDialogFragment extends DialogFragment {
                 int bt2 = 0;
                 int bt3 = 0;
                 int bt4 = 0;
+    
+                int vl1 = 0; // validation for wakeup time before first use time.
+                int vl2 = 0; // validation for least time in answer 5
+                int vl3 = 0; // validation for least time in answer 6
+                
                 
                 if (button1 > 0) {
                     if (answer5.length () > 0 &&
@@ -748,18 +761,60 @@ public class SurveyDialogFragment extends DialogFragment {
                         bt4 = 2;
                     }
                 }
-                
-                if (answer1.length () > 0 &&
-                        answer2.length () > 0 &&
-                        answer3.length () > 0) {
+    
+                try {
+                    Date time1 = new SimpleDateFormat ("HH:mm", Locale.US).parse (wakeup_time);
+                    Calendar calendar1 = Calendar.getInstance ();
+                    calendar1.setTime (time1);
+        
+                    Date time2 = new SimpleDateFormat ("HH:mm", Locale.US).parse (first_use_time);
+                    Calendar calendar2 = Calendar.getInstance ();
+                    calendar2.setTime (time2);
+        
+                    if (calendar2.getTime ().before (calendar1.getTime ())) {
+                        vl1 = 2;
+                        llAnswer1.setBackground (getResources ().getDrawable (R.drawable.bg_question_red));
+                        llAnswer2.setBackground (getResources ().getDrawable (R.drawable.bg_question_red));
+                        Utils.showToast (getActivity (), "First use time cannot be before wakeup time", false);
+                    } else {
+                        vl1 = 1;
+                    }
+                } catch (ParseException e) {
+                    e.printStackTrace ();
+                }
+    
+                if (answer5c.length () > 0 && answer5d.length () > 0) {
+                    if (Integer.parseInt (answer5c) > Integer.parseInt (answer5d)) {
+                        vl2 = 2;
+                        llAnswer5c.setBackground (getResources ().getDrawable (R.drawable.bg_question_red));
+                        llAnswer5d.setBackground (getResources ().getDrawable (R.drawable.bg_question_red));
+                        Utils.showToast (getActivity (), "Least time cannot be greater than most time", false);
+                    } else {
+                        vl2 = 1;
+                    }
+                }
+    
+                if (answer6c.length () > 0 && answer6d.length () > 0) {
+                    if (Integer.parseInt (answer6c) > Integer.parseInt (answer6d)) {
+                        vl3 = 2;
+                        llAnswer6c.setBackground (getResources ().getDrawable (R.drawable.bg_question_red));
+                        llAnswer6d.setBackground (getResources ().getDrawable (R.drawable.bg_question_red));
+                        Utils.showToast (getActivity (), "Least time cannot be greater than most time", false);
+                    } else {
+                        vl3 = 1;
+                    }
+                }
+    
+    
+                if (answer1.length () > 0 && answer2.length () > 0 && answer3.length () > 0) {
                     if (answer3.equalsIgnoreCase (getResources ().getString (R.string.question3f))) {
                         if (answer4.length () > 0) {
-                            if (bt1 != 2 && bt2 != 2 && bt3 != 2 && bt4 != 2) {
+                            if (bt1 != 2 && bt2 != 2 && bt3 != 2 && bt4 != 2 && vl1 != 2 && vl2 != 2 && vl3 != 2) {
                                 sendSurveyDetailsToServer (answer1, answer2, answer3, answer4, answer5, answer5a, answer5b, answer5c, answer5d, answer6, answer6a, answer6b, answer6c, answer6d, answer7, answer7a, answer7b, answer7c, answer8, answer8a, answer8b);
                             }
                         }
                     } else {
-                        if (bt1 != 2 && bt2 != 2 && bt3 != 2 && bt4 != 2) {
+                        if (bt1 != 2 && bt2 != 2 && bt3 != 2 && bt4 != 2 && vl1 != 2 && vl2 != 2 && vl3 != 2) {
                             sendSurveyDetailsToServer (answer1, answer2, answer3, answer4, answer5, answer5a, answer5b, answer5c, answer5d, answer6, answer6a, answer6b, answer6c, answer6d, answer7, answer7a, answer7b, answer7c, answer8, answer8a, answer8b);
                         }
                     }

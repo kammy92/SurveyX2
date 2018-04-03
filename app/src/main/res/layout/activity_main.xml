@@ -127,13 +127,14 @@
                         android:layout_marginTop="@dimen/activity_margin"
                         android:text="There is one page to complete for each day this week. At the end of each week you will be"
                         android:textColor="@color/primary_text"
-                        android:textSize="@dimen/text_size_medium"/>
+                        android:textSize="@dimen/text_size_medium"
+                        android:visibility="gone"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/activity_margin"
                         android:gravity="left"
-                        android:text="Should you have any problems or questions please call 1-800-642-3141."
+                        android:text="If you have any questions, please call study support at 1-800-642-3141 "
                         android:textColor="@color/primary_text"
                         android:textSize="@dimen/text_size_medium"/>
                 </LinearLayout>
@@ -167,7 +168,7 @@
                 android:id="@+id/rlMain"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="gone">
+                android:visibility="visible">
                 <ScrollView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -197,7 +198,7 @@
                             android:layout_marginRight="@dimen/activity_margin"
                             android:layout_marginTop="@dimen/activity_margin_small"
                             android:gravity="center"
-                            android:text="Have questions or need assistance? Contact Field Support @ 1-800-642-3141"
+                            android:text="Have questions or need assistance? Contact Study Support @ 1-800-642-3141"
                             android:textColor="@color/primary_text"
                             android:textSize="@dimen/text_size_small"/>
                         <RelativeLayout
@@ -589,7 +590,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:padding="@dimen/activity_margin"
-                        android:text="LOGOUT"
+                        android:text="LOGOUT / START A NEW WEEK"
                         android:textColor="@color/text_color_white"
                         android:textSize="@dimen/text_size_small"
                         android:textStyle="bold"/>

@@ -66,6 +66,57 @@ public class FinalSurveyDialogFragment extends DialogFragment {
     private RadioButton rbALot;
     private RadioButton rbQuiteALot;
     private RadioButton rbExtremely;
+    
+    private RadioButton rbNotAtAll1;
+    private RadioButton rbVeryLittle1;
+    private RadioButton rbALittle1;
+    private RadioButton rbModerately1;
+    private RadioButton rbALot1;
+    private RadioButton rbQuiteALot1;
+    private RadioButton rbExtremely1;
+    
+    private RadioButton rbNotAtAll2;
+    private RadioButton rbVeryLittle2;
+    private RadioButton rbALittle2;
+    private RadioButton rbModerately2;
+    private RadioButton rbALot2;
+    private RadioButton rbQuiteALot2;
+    private RadioButton rbExtremely2;
+    
+    private RadioButton rbNotAtAll3;
+    private RadioButton rbVeryLittle3;
+    private RadioButton rbALittle3;
+    private RadioButton rbModerately3;
+    private RadioButton rbALot3;
+    private RadioButton rbQuiteALot3;
+    private RadioButton rbExtremely3;
+    
+    private RadioButton rbNotAtAll4;
+    private RadioButton rbVeryLittle4;
+    private RadioButton rbALittle4;
+    private RadioButton rbModerately4;
+    private RadioButton rbALot4;
+    private RadioButton rbQuiteALot4;
+    private RadioButton rbExtremely4;
+    
+    private RadioButton rbNotAtAll5;
+    private RadioButton rbVeryLittle5;
+    private RadioButton rbALittle5;
+    private RadioButton rbModerately5;
+    private RadioButton rbALot5;
+    private RadioButton rbQuiteALot5;
+    private RadioButton rbExtremely5;
+    
+    private RadioButton rbNotAtAll6;
+    private RadioButton rbVeryLittle6;
+    private RadioButton rbALittle6;
+    private RadioButton rbModerately6;
+    private RadioButton rbALot6;
+    private RadioButton rbQuiteALot6;
+    private RadioButton rbExtremely6;
+    
+    
+    
     private EditText etAnswer9a;
     private EditText etAnswer9b;
     private EditText etAnswer9c;
@@ -124,6 +175,56 @@ public class FinalSurveyDialogFragment extends DialogFragment {
         rbALot = (RadioButton) root.findViewById (R.id.rbALot);
         rbQuiteALot = (RadioButton) root.findViewById (R.id.rbQuiteALot);
         rbExtremely = (RadioButton) root.findViewById (R.id.rbExtremely);
+    
+        rbNotAtAll1 = (RadioButton) root.findViewById (R.id.rbNotAtAll1);
+        rbVeryLittle1 = (RadioButton) root.findViewById (R.id.rbVeryLittle1);
+        rbALittle1 = (RadioButton) root.findViewById (R.id.rbALittle1);
+        rbModerately1 = (RadioButton) root.findViewById (R.id.rbModerately1);
+        rbALot1 = (RadioButton) root.findViewById (R.id.rbALot1);
+        rbQuiteALot1 = (RadioButton) root.findViewById (R.id.rbQuiteALot1);
+        rbExtremely1 = (RadioButton) root.findViewById (R.id.rbExtremely1);
+    
+        rbNotAtAll2 = (RadioButton) root.findViewById (R.id.rbNotAtAll2);
+        rbVeryLittle2 = (RadioButton) root.findViewById (R.id.rbVeryLittle2);
+        rbALittle2 = (RadioButton) root.findViewById (R.id.rbALittle2);
+        rbModerately2 = (RadioButton) root.findViewById (R.id.rbModerately2);
+        rbALot2 = (RadioButton) root.findViewById (R.id.rbALot2);
+        rbQuiteALot2 = (RadioButton) root.findViewById (R.id.rbQuiteALot2);
+        rbExtremely2 = (RadioButton) root.findViewById (R.id.rbExtremely2);
+    
+        rbNotAtAll3 = (RadioButton) root.findViewById (R.id.rbNotAtAll3);
+        rbVeryLittle3 = (RadioButton) root.findViewById (R.id.rbVeryLittle3);
+        rbALittle3 = (RadioButton) root.findViewById (R.id.rbALittle3);
+        rbModerately3 = (RadioButton) root.findViewById (R.id.rbModerately3);
+        rbALot3 = (RadioButton) root.findViewById (R.id.rbALot3);
+        rbQuiteALot3 = (RadioButton) root.findViewById (R.id.rbQuiteALot3);
+        rbExtremely3 = (RadioButton) root.findViewById (R.id.rbExtremely3);
+    
+        rbNotAtAll4 = (RadioButton) root.findViewById (R.id.rbNotAtAll4);
+        rbVeryLittle4 = (RadioButton) root.findViewById (R.id.rbVeryLittle4);
+        rbALittle4 = (RadioButton) root.findViewById (R.id.rbALittle4);
+        rbModerately4 = (RadioButton) root.findViewById (R.id.rbModerately4);
+        rbALot4 = (RadioButton) root.findViewById (R.id.rbALot4);
+        rbQuiteALot4 = (RadioButton) root.findViewById (R.id.rbQuiteALot4);
+        rbExtremely4 = (RadioButton) root.findViewById (R.id.rbExtremely4);
+    
+        rbNotAtAll5 = (RadioButton) root.findViewById (R.id.rbNotAtAll5);
+        rbVeryLittle5 = (RadioButton) root.findViewById (R.id.rbVeryLittle5);
+        rbALittle5 = (RadioButton) root.findViewById (R.id.rbALittle5);
+        rbModerately5 = (RadioButton) root.findViewById (R.id.rbModerately5);
+        rbALot5 = (RadioButton) root.findViewById (R.id.rbALot5);
+        rbQuiteALot5 = (RadioButton) root.findViewById (R.id.rbQuiteALot5);
+        rbExtremely5 = (RadioButton) root.findViewById (R.id.rbExtremely5);
+    
+        rbNotAtAll6 = (RadioButton) root.findViewById (R.id.rbNotAtAll6);
+        rbVeryLittle6 = (RadioButton) root.findViewById (R.id.rbVeryLittle6);
+        rbALittle6 = (RadioButton) root.findViewById (R.id.rbALittle6);
+        rbModerately6 = (RadioButton) root.findViewById (R.id.rbModerately6);
+        rbALot6 = (RadioButton) root.findViewById (R.id.rbALot6);
+        rbQuiteALot6 = (RadioButton) root.findViewById (R.id.rbQuiteALot6);
+        rbExtremely6 = (RadioButton) root.findViewById (R.id.rbExtremely6);
+    
+    
         etAnswer9a = (EditText) root.findViewById (R.id.etAnswer9a);
         etAnswer9b = (EditText) root.findViewById (R.id.etAnswer9b);
         etAnswer9c = (EditText) root.findViewById (R.id.etAnswer9c);
@@ -233,8 +334,6 @@ public class FinalSurveyDialogFragment extends DialogFragment {
                 rbExtremely.setChecked (false);
             }
         });
-        
-        
         rbExtremely.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick (View v) {
@@ -248,7 +347,524 @@ public class FinalSurveyDialogFragment extends DialogFragment {
                 
             }
         });
+    
+    
+        rbNotAtAll1.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9a = rbNotAtAll1.getText ().toString ().trim ();
+                rbVeryLittle1.setChecked (false);
+                rbALittle1.setChecked (false);
+                rbModerately1.setChecked (false);
+                rbALot1.setChecked (false);
+                rbQuiteALot1.setChecked (false);
+                rbExtremely1.setChecked (false);
+            }
+        });
+        rbVeryLittle1.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9a = rbVeryLittle1.getText ().toString ().trim ();
+                rbNotAtAll1.setChecked (false);
+                rbALittle1.setChecked (false);
+                rbModerately1.setChecked (false);
+                rbALot1.setChecked (false);
+                rbQuiteALot1.setChecked (false);
+                rbExtremely1.setChecked (false);
+            }
+        });
+        rbALittle1.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9a = rbALittle1.getText ().toString ().trim ();
+                rbNotAtAll1.setChecked (false);
+                rbVeryLittle1.setChecked (false);
+                rbModerately1.setChecked (false);
+                rbALot1.setChecked (false);
+                rbQuiteALot1.setChecked (false);
+                rbExtremely1.setChecked (false);
+            }
+        });
+        rbModerately1.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9a = rbModerately1.getText ().toString ().trim ();
+                rbNotAtAll1.setChecked (false);
+                rbVeryLittle1.setChecked (false);
+                rbALittle1.setChecked (false);
+                rbALot1.setChecked (false);
+                rbQuiteALot1.setChecked (false);
+                rbExtremely1.setChecked (false);
+            }
+        });
+        rbALot1.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9a = rbALot1.getText ().toString ().trim ();
+                rbNotAtAll1.setChecked (false);
+                rbVeryLittle1.setChecked (false);
+                rbALittle1.setChecked (false);
+                rbModerately1.setChecked (false);
+                rbQuiteALot1.setChecked (false);
+                rbExtremely1.setChecked (false);
+            }
+        });
+        rbQuiteALot1.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9a = rbQuiteALot1.getText ().toString ().trim ();
+                rbNotAtAll1.setChecked (false);
+                rbVeryLittle1.setChecked (false);
+                rbALittle1.setChecked (false);
+                rbModerately1.setChecked (false);
+                rbALot1.setChecked (false);
+                rbExtremely1.setChecked (false);
+            }
+        });
+        rbExtremely1.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9a = rbExtremely1.getText ().toString ().trim ();
+                rbNotAtAll1.setChecked (false);
+                rbVeryLittle1.setChecked (false);
+                rbALittle1.setChecked (false);
+                rbModerately1.setChecked (false);
+                rbALot1.setChecked (false);
+                rbQuiteALot1.setChecked (false);
+            }
+        });
+    
+    
+        rbNotAtAll2.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9b = rbNotAtAll2.getText ().toString ().trim ();
+                rbVeryLittle2.setChecked (false);
+                rbALittle2.setChecked (false);
+                rbModerately2.setChecked (false);
+                rbALot2.setChecked (false);
+                rbQuiteALot2.setChecked (false);
+                rbExtremely2.setChecked (false);
+            }
+        });
+        rbVeryLittle2.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9b = rbVeryLittle2.getText ().toString ().trim ();
+                rbNotAtAll2.setChecked (false);
+                rbALittle2.setChecked (false);
+                rbModerately2.setChecked (false);
+                rbALot2.setChecked (false);
+                rbQuiteALot2.setChecked (false);
+                rbExtremely2.setChecked (false);
+            }
+        });
+        rbALittle2.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9b = rbALittle2.getText ().toString ().trim ();
+                rbNotAtAll2.setChecked (false);
+                rbVeryLittle2.setChecked (false);
+                rbModerately2.setChecked (false);
+                rbALot2.setChecked (false);
+                rbQuiteALot2.setChecked (false);
+                rbExtremely2.setChecked (false);
+            }
+        });
+        rbModerately2.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9b = rbModerately2.getText ().toString ().trim ();
+                rbNotAtAll2.setChecked (false);
+                rbVeryLittle2.setChecked (false);
+                rbALittle2.setChecked (false);
+                rbALot2.setChecked (false);
+                rbQuiteALot2.setChecked (false);
+                rbExtremely2.setChecked (false);
+            }
+        });
+        rbALot2.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9b = rbALot2.getText ().toString ().trim ();
+                rbNotAtAll2.setChecked (false);
+                rbVeryLittle2.setChecked (false);
+                rbALittle2.setChecked (false);
+                rbModerately2.setChecked (false);
+                rbQuiteALot2.setChecked (false);
+                rbExtremely2.setChecked (false);
+            }
+        });
+        rbQuiteALot2.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9b = rbQuiteALot2.getText ().toString ().trim ();
+                rbNotAtAll2.setChecked (false);
+                rbVeryLittle2.setChecked (false);
+                rbALittle2.setChecked (false);
+                rbModerately2.setChecked (false);
+                rbALot2.setChecked (false);
+                rbExtremely2.setChecked (false);
+            }
+        });
+        rbExtremely2.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9b = rbExtremely2.getText ().toString ().trim ();
+                rbNotAtAll2.setChecked (false);
+                rbVeryLittle2.setChecked (false);
+                rbALittle2.setChecked (false);
+                rbModerately2.setChecked (false);
+                rbALot2.setChecked (false);
+                rbQuiteALot2.setChecked (false);
+            }
+        });
+    
+    
+        rbNotAtAll3.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9c = rbNotAtAll3.getText ().toString ().trim ();
+                rbVeryLittle3.setChecked (false);
+                rbALittle3.setChecked (false);
+                rbModerately3.setChecked (false);
+                rbALot3.setChecked (false);
+                rbQuiteALot3.setChecked (false);
+                rbExtremely3.setChecked (false);
+            }
+        });
+        rbVeryLittle3.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9c = rbVeryLittle3.getText ().toString ().trim ();
+                rbNotAtAll3.setChecked (false);
+                rbALittle3.setChecked (false);
+                rbModerately3.setChecked (false);
+                rbALot3.setChecked (false);
+                rbQuiteALot3.setChecked (false);
+                rbExtremely3.setChecked (false);
+            }
+        });
+        rbALittle3.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9c = rbALittle3.getText ().toString ().trim ();
+                rbNotAtAll3.setChecked (false);
+                rbVeryLittle3.setChecked (false);
+                rbModerately3.setChecked (false);
+                rbALot3.setChecked (false);
+                rbQuiteALot3.setChecked (false);
+                rbExtremely3.setChecked (false);
+            }
+        });
+        rbModerately3.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9c = rbModerately3.getText ().toString ().trim ();
+                rbNotAtAll3.setChecked (false);
+                rbVeryLittle3.setChecked (false);
+                rbALittle3.setChecked (false);
+                rbALot3.setChecked (false);
+                rbQuiteALot3.setChecked (false);
+                rbExtremely3.setChecked (false);
+            }
+        });
+        rbALot3.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9c = rbALot3.getText ().toString ().trim ();
+                rbNotAtAll3.setChecked (false);
+                rbVeryLittle3.setChecked (false);
+                rbALittle3.setChecked (false);
+                rbModerately3.setChecked (false);
+                rbQuiteALot3.setChecked (false);
+                rbExtremely3.setChecked (false);
+            }
+        });
+        rbQuiteALot3.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9c = rbQuiteALot3.getText ().toString ().trim ();
+                rbNotAtAll3.setChecked (false);
+                rbVeryLittle3.setChecked (false);
+                rbALittle3.setChecked (false);
+                rbModerately3.setChecked (false);
+                rbALot3.setChecked (false);
+                rbExtremely3.setChecked (false);
+            }
+        });
+        rbExtremely3.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9c = rbExtremely3.getText ().toString ().trim ();
+                rbNotAtAll3.setChecked (false);
+                rbVeryLittle3.setChecked (false);
+                rbALittle3.setChecked (false);
+                rbModerately3.setChecked (false);
+                rbALot3.setChecked (false);
+                rbQuiteALot3.setChecked (false);
+            }
+        });
+    
+    
+        rbNotAtAll4.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9d = rbNotAtAll4.getText ().toString ().trim ();
+                rbVeryLittle4.setChecked (false);
+                rbALittle4.setChecked (false);
+                rbModerately4.setChecked (false);
+                rbALot4.setChecked (false);
+                rbQuiteALot4.setChecked (false);
+                rbExtremely4.setChecked (false);
+            }
+        });
+        rbVeryLittle4.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9d = rbVeryLittle4.getText ().toString ().trim ();
+                rbNotAtAll4.setChecked (false);
+                rbALittle4.setChecked (false);
+                rbModerately4.setChecked (false);
+                rbALot4.setChecked (false);
+                rbQuiteALot4.setChecked (false);
+                rbExtremely4.setChecked (false);
+            }
+        });
+        rbALittle4.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9d = rbALittle4.getText ().toString ().trim ();
+                rbNotAtAll4.setChecked (false);
+                rbVeryLittle4.setChecked (false);
+                rbModerately4.setChecked (false);
+                rbALot4.setChecked (false);
+                rbQuiteALot4.setChecked (false);
+                rbExtremely4.setChecked (false);
+            }
+        });
+        rbModerately4.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9d = rbModerately4.getText ().toString ().trim ();
+                rbNotAtAll4.setChecked (false);
+                rbVeryLittle4.setChecked (false);
+                rbALittle4.setChecked (false);
+                rbALot4.setChecked (false);
+                rbQuiteALot4.setChecked (false);
+                rbExtremely4.setChecked (false);
+            }
+        });
+        rbALot4.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9d = rbALot4.getText ().toString ().trim ();
+                rbNotAtAll4.setChecked (false);
+                rbVeryLittle4.setChecked (false);
+                rbALittle4.setChecked (false);
+                rbModerately4.setChecked (false);
+                rbQuiteALot4.setChecked (false);
+                rbExtremely4.setChecked (false);
+            }
+        });
+        rbQuiteALot4.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9d = rbQuiteALot4.getText ().toString ().trim ();
+                rbNotAtAll4.setChecked (false);
+                rbVeryLittle4.setChecked (false);
+                rbALittle4.setChecked (false);
+                rbModerately4.setChecked (false);
+                rbALot4.setChecked (false);
+                rbExtremely4.setChecked (false);
+            }
+        });
+        rbExtremely4.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9d = rbExtremely4.getText ().toString ().trim ();
+                rbNotAtAll4.setChecked (false);
+                rbVeryLittle4.setChecked (false);
+                rbALittle4.setChecked (false);
+                rbModerately4.setChecked (false);
+                rbALot4.setChecked (false);
+                rbQuiteALot4.setChecked (false);
+            }
+        });
+    
+    
+        rbNotAtAll5.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9e = rbNotAtAll5.getText ().toString ().trim ();
+                rbVeryLittle5.setChecked (false);
+                rbALittle5.setChecked (false);
+                rbModerately5.setChecked (false);
+                rbALot5.setChecked (false);
+                rbQuiteALot5.setChecked (false);
+                rbExtremely5.setChecked (false);
+            }
+        });
+        rbVeryLittle5.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9e = rbVeryLittle5.getText ().toString ().trim ();
+                rbNotAtAll5.setChecked (false);
+                rbALittle5.setChecked (false);
+                rbModerately5.setChecked (false);
+                rbALot5.setChecked (false);
+                rbQuiteALot5.setChecked (false);
+                rbExtremely5.setChecked (false);
+            }
+        });
+        rbALittle5.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9e = rbALittle5.getText ().toString ().trim ();
+                rbNotAtAll5.setChecked (false);
+                rbVeryLittle5.setChecked (false);
+                rbModerately5.setChecked (false);
+                rbALot5.setChecked (false);
+                rbQuiteALot5.setChecked (false);
+                rbExtremely5.setChecked (false);
+            }
+        });
+        rbModerately5.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9e = rbModerately5.getText ().toString ().trim ();
+                rbNotAtAll5.setChecked (false);
+                rbVeryLittle5.setChecked (false);
+                rbALittle5.setChecked (false);
+                rbALot5.setChecked (false);
+                rbQuiteALot5.setChecked (false);
+                rbExtremely5.setChecked (false);
+            }
+        });
+        rbALot5.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9e = rbALot5.getText ().toString ().trim ();
+                rbNotAtAll5.setChecked (false);
+                rbVeryLittle5.setChecked (false);
+                rbALittle5.setChecked (false);
+                rbModerately5.setChecked (false);
+                rbQuiteALot5.setChecked (false);
+                rbExtremely5.setChecked (false);
+            }
+        });
+        rbQuiteALot5.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9e = rbQuiteALot5.getText ().toString ().trim ();
+                rbNotAtAll5.setChecked (false);
+                rbVeryLittle5.setChecked (false);
+                rbALittle5.setChecked (false);
+                rbModerately5.setChecked (false);
+                rbALot5.setChecked (false);
+                rbExtremely5.setChecked (false);
+            }
+        });
+        rbExtremely5.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9e = rbExtremely5.getText ().toString ().trim ();
+                rbNotAtAll5.setChecked (false);
+                rbVeryLittle5.setChecked (false);
+                rbALittle5.setChecked (false);
+                rbModerately5.setChecked (false);
+                rbALot5.setChecked (false);
+                rbQuiteALot5.setChecked (false);
+            }
+        });
+    
+        rbNotAtAll6.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9f = rbNotAtAll6.getText ().toString ().trim ();
+                rbVeryLittle6.setChecked (false);
+                rbALittle6.setChecked (false);
+                rbModerately6.setChecked (false);
+                rbALot6.setChecked (false);
+                rbQuiteALot6.setChecked (false);
+                rbExtremely6.setChecked (false);
+            }
+        });
+        rbVeryLittle6.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9f = rbVeryLittle6.getText ().toString ().trim ();
+                rbNotAtAll6.setChecked (false);
+                rbALittle6.setChecked (false);
+                rbModerately6.setChecked (false);
+                rbALot6.setChecked (false);
+                rbQuiteALot6.setChecked (false);
+                rbExtremely6.setChecked (false);
+            }
+        });
+        rbALittle6.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9f = rbALittle6.getText ().toString ().trim ();
+                rbNotAtAll6.setChecked (false);
+                rbVeryLittle6.setChecked (false);
+                rbModerately6.setChecked (false);
+                rbALot6.setChecked (false);
+                rbQuiteALot6.setChecked (false);
+                rbExtremely6.setChecked (false);
+            }
+        });
+        rbModerately6.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9f = rbModerately6.getText ().toString ().trim ();
+                rbNotAtAll6.setChecked (false);
+                rbVeryLittle6.setChecked (false);
+                rbALittle6.setChecked (false);
+                rbALot6.setChecked (false);
+                rbQuiteALot6.setChecked (false);
+                rbExtremely6.setChecked (false);
+            }
+        });
+        rbALot6.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9f = rbALot6.getText ().toString ().trim ();
+                rbNotAtAll6.setChecked (false);
+                rbVeryLittle6.setChecked (false);
+                rbALittle6.setChecked (false);
+                rbModerately6.setChecked (false);
+                rbQuiteALot6.setChecked (false);
+                rbExtremely6.setChecked (false);
+            }
+        });
+        rbQuiteALot6.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9f = rbQuiteALot6.getText ().toString ().trim ();
+                rbNotAtAll6.setChecked (false);
+                rbVeryLittle6.setChecked (false);
+                rbALittle6.setChecked (false);
+                rbModerately6.setChecked (false);
+                rbALot6.setChecked (false);
+                rbExtremely6.setChecked (false);
+            }
+        });
+        rbExtremely6.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick (View v) {
+                answer9f = rbExtremely6.getText ().toString ().trim ();
+                rbNotAtAll6.setChecked (false);
+                rbVeryLittle6.setChecked (false);
+                rbALittle6.setChecked (false);
+                rbModerately6.setChecked (false);
+                rbALot6.setChecked (false);
+                rbQuiteALot6.setChecked (false);
+            }
+        });
         
+
+
         tvSubmit.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick (View v) {
@@ -257,43 +873,41 @@ public class FinalSurveyDialogFragment extends DialogFragment {
                 } else {
                     llAnswer9.setBackground (getResources ().getDrawable (R.drawable.bg_question));
                 }
-                
-                if (etAnswer9a.getText ().length () == 0) {
+    
+                if (answer9a.length () == 0) {
                     llAnswer9a.setBackground (getResources ().getDrawable (R.drawable.bg_question_red));
                 } else {
                     llAnswer9a.setBackground (getResources ().getDrawable (R.drawable.bg_question));
-                    answer9a = etAnswer9a.getText ().toString ().trim ();
                 }
-                
-                if (etAnswer9b.getText ().length () == 0) {
+    
+                if (answer9b.length () == 0) {
                     llAnswer9b.setBackground (getResources ().getDrawable (R.drawable.bg_question_red));
                 } else {
                     llAnswer9b.setBackground (getResources ().getDrawable (R.drawable.bg_question));
-                    answer9b = etAnswer9b.getText ().toString ().trim ();
                 }
-                if (etAnswer9c.getText ().length () == 0) {
+    
+                if (answer9c.length () == 0) {
                     llAnswer9c.setBackground (getResources ().getDrawable (R.drawable.bg_question_red));
                 } else {
                     llAnswer9c.setBackground (getResources ().getDrawable (R.drawable.bg_question));
-                    answer9c = etAnswer9c.getText ().toString ().trim ();
                 }
-                if (etAnswer9d.getText ().length () == 0) {
+    
+                if (answer9d.length () == 0) {
                     llAnswer9d.setBackground (getResources ().getDrawable (R.drawable.bg_question_red));
                 } else {
                     llAnswer9d.setBackground (getResources ().getDrawable (R.drawable.bg_question));
-                    answer9d = etAnswer9d.getText ().toString ().trim ();
                 }
-                if (etAnswer9e.getText ().length () == 0) {
+    
+                if (answer9e.length () == 0) {
                     llAnswer9e.setBackground (getResources ().getDrawable (R.drawable.bg_question_red));
                 } else {
                     llAnswer9e.setBackground (getResources ().getDrawable (R.drawable.bg_question));
-                    answer9e = etAnswer9e.getText ().toString ().trim ();
                 }
-                if (etAnswer9f.getText ().length () == 0) {
+    
+                if (answer9f.length () == 0) {
                     llAnswer9f.setBackground (getResources ().getDrawable (R.drawable.bg_question_red));
                 } else {
                     llAnswer9f.setBackground (getResources ().getDrawable (R.drawable.bg_question));
-                    answer9f = etAnswer9f.getText ().toString ().trim ();
                 }
                 
                 if (answer9.length () > 0 &&

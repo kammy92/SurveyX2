@@ -3,8 +3,8 @@ package com.resultier.pktrackit.utils;
 public class AppConfigURL {
     public static String version = "v1.3";
 //    private static String BASE_URL = "https://project-surveyx-cammy92.c9users.io/api/" + version + "/";
-    
     private static String BASE_URL = "http://34.215.95.251/pk/api/" + version + "/";
+    //private static String BASE_URL = "http://il-ch-d-ws04.pk-research.com/api/" + version + "/";
     
     
     public static String LOGIN = BASE_URL + "user/login";

@@ -455,35 +455,35 @@ public class MainActivity extends AppCompatActivity {
                                                 rlDayComplete.setVisibility (View.GONE);
                                                 break;
                                             case 1:
-//                                                if (jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT) != null) {
-//                                                    appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.SURVEY_STARTED_AT, jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT));
-//                                                    Calendar c = Calendar.getInstance ();
-//                                                    SimpleDateFormat df2 = new SimpleDateFormat ("yyyy-MM-dd", Locale.US);
-//                                                    Log.e ("karman", "diff time : " + (Utils.getDaysBetweenDates (Utils.convertTimeFormat (jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT), "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd"), df2.format (c.getTime ())) + 1));
-//                                                    Log.e ("karman", "days elapsed  : " + jsonObj.getInt (AppConfigTags.SURVEY_DAY_ELAPSED));
-//                                                    if ((Utils.getDaysBetweenDates (Utils.convertTimeFormat (jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT), "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd"), df2.format (c.getTime ())) + 1) <= jsonObj.getInt (AppConfigTags.SURVEY_DAY_ELAPSED)) {
-//                                                        rlInstructions.setVisibility (View.GONE);
-//                                                        rlMain.setVisibility (View.GONE);
-//                                                        rlConclusion.setVisibility (View.GONE);
-//                                                        rlLabReport.setVisibility (View.GONE);
-//                                                        rlSurveyComplete.setVisibility (View.GONE);
-//                                                        rlDayComplete.setVisibility (View.VISIBLE);
-//                                                    } else{
-//                                                        rlInstructions.setVisibility (View.GONE);
-//                                                        rlMain.setVisibility (View.VISIBLE);
-//                                                        rlConclusion.setVisibility (View.GONE);
-//                                                        rlLabReport.setVisibility (View.GONE);
-//                                                        rlSurveyComplete.setVisibility (View.GONE);
-//                                                        rlDayComplete.setVisibility (View.GONE);
-//                                                    }
-//                                                } else {
-                                                rlInstructions.setVisibility (View.GONE);
-                                                rlMain.setVisibility (View.VISIBLE);
-                                                rlConclusion.setVisibility (View.GONE);
-                                                rlLabReport.setVisibility (View.GONE);
-                                                rlSurveyComplete.setVisibility (View.GONE);
-                                                rlDayComplete.setVisibility (View.GONE);
-//                                                }
+                                                if (jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT) != null) {
+                                                    appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.SURVEY_STARTED_AT, jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT));
+                                                    Calendar c = Calendar.getInstance ();
+                                                    SimpleDateFormat df2 = new SimpleDateFormat ("yyyy-MM-dd", Locale.US);
+                                                    Log.e ("karman", "diff time : " + (Utils.getDaysBetweenDates (Utils.convertTimeFormat (jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT), "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd"), df2.format (c.getTime ())) + 1));
+                                                    Log.e ("karman", "days elapsed  : " + jsonObj.getInt (AppConfigTags.SURVEY_DAY_ELAPSED));
+                                                    if ((Utils.getDaysBetweenDates (Utils.convertTimeFormat (jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT), "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd"), df2.format (c.getTime ())) + 1) <= jsonObj.getInt (AppConfigTags.SURVEY_DAY_ELAPSED)) {
+                                                        rlInstructions.setVisibility (View.GONE);
+                                                        rlMain.setVisibility (View.GONE);
+                                                        rlConclusion.setVisibility (View.GONE);
+                                                        rlLabReport.setVisibility (View.GONE);
+                                                        rlSurveyComplete.setVisibility (View.GONE);
+                                                        rlDayComplete.setVisibility (View.VISIBLE);
+                                                    } else {
+                                                        rlInstructions.setVisibility (View.GONE);
+                                                        rlMain.setVisibility (View.VISIBLE);
+                                                        rlConclusion.setVisibility (View.GONE);
+                                                        rlLabReport.setVisibility (View.GONE);
+                                                        rlSurveyComplete.setVisibility (View.GONE);
+                                                        rlDayComplete.setVisibility (View.GONE);
+                                                    }
+                                                } else {
+                                                    rlInstructions.setVisibility (View.GONE);
+                                                    rlMain.setVisibility (View.VISIBLE);
+                                                    rlConclusion.setVisibility (View.GONE);
+                                                    rlLabReport.setVisibility (View.GONE);
+                                                    rlSurveyComplete.setVisibility (View.GONE);
+                                                    rlDayComplete.setVisibility (View.GONE);
+                                                }
                                                 break;
                                             case 2:
                                                 rlInstructions.setVisibility (View.GONE);

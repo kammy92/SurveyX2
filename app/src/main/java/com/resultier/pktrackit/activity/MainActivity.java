@@ -459,8 +459,8 @@ public class MainActivity extends AppCompatActivity {
                                                     appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.SURVEY_STARTED_AT, jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT));
                                                     Calendar c = Calendar.getInstance ();
                                                     SimpleDateFormat df2 = new SimpleDateFormat ("yyyy-MM-dd", Locale.US);
-                                                    Log.e ("karman", "diff time : " + (Utils.getDaysBetweenDates (Utils.convertTimeFormat (jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT), "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd"), df2.format (c.getTime ())) + 1));
-                                                    Log.e ("karman", "days elapsed  : " + jsonObj.getInt (AppConfigTags.SURVEY_DAY_ELAPSED));
+//                                                    Log.e ("karman", "diff time : " + (Utils.getDaysBetweenDates (Utils.convertTimeFormat (jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT), "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd"), df2.format (c.getTime ())) + 1));
+//                                                    Log.e ("karman", "days elapsed  : " + jsonObj.getInt (AppConfigTags.SURVEY_DAY_ELAPSED));
                                                     if ((Utils.getDaysBetweenDates (Utils.convertTimeFormat (jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT), "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd"), df2.format (c.getTime ())) + 1) <= jsonObj.getInt (AppConfigTags.SURVEY_DAY_ELAPSED)) {
                                                         rlInstructions.setVisibility (View.GONE);
                                                         rlMain.setVisibility (View.GONE);
@@ -515,6 +515,24 @@ public class MainActivity extends AppCompatActivity {
                                 } catch (Exception e) {
                                     e.printStackTrace ();
                                     progressDialog.dismiss ();
+                                    appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.USER_NAME, "");
+                                    appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.USER_MOBILE, "");
+                                    appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.USER_LOGIN_KEY, "");
+                                    appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.SURVEY_ID, 0);
+                                    appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.SURVEY_NUMBER, "");
+                                    appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.SURVEY_STATUS, 0);
+                                    appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.SURVEY_DAY_ELAPSED, 0);
+                                    appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.SURVEY_STARTED_AT, "");
+                                    appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.PRODUCT_ID, 0);
+                                    appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.PRODUCT_CODE, "");
+                                    appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.BUTTON1, 0);
+                                    appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.BUTTON2, 0);
+                                    appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.BUTTON3, 0);
+                                    appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.BUTTON4, 0);
+                                    Intent intent = new Intent (MainActivity.this, LoginActivity.class);
+                                    startActivity (intent);
+                                    finish ();
+                                    overridePendingTransition (R.anim.slide_in_left, R.anim.slide_out_right);
                                 }
                             } else {
                                 Utils.showLog (Log.WARN, AppConfigTags.SERVER_RESPONSE, AppConfigTags.DIDNT_RECEIVE_ANY_DATA_FROM_SERVER, true);

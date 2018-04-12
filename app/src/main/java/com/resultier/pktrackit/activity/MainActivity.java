@@ -1,10 +1,15 @@
 package com.resultier.pktrackit.activity;
 
+import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
@@ -423,7 +429,15 @@ public class MainActivity extends AppCompatActivity {
     }
     
     private void initApplication () {
+        PackageInfo pInfo = null;
+        try {
+            pInfo = getPackageManager ().getPackageInfo (getPackageName (), 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace ();
+        }
+        
         if (NetworkConnection.isNetworkAvailable (this)) {
+            final PackageInfo finalPInfo = pInfo;
             Utils.showProgressDialog (this, progressDialog, getResources ().getString (R.string.progress_dialog_text_please_wait), true);
             Utils.showLog (Log.INFO, AppConfigTags.URL, AppConfigURL.INIT_APPLICATION, true);
             StringRequest strRequest = new StringRequest (Request.Method.POST, AppConfigURL.INIT_APPLICATION,
@@ -437,6 +451,45 @@ public class MainActivity extends AppCompatActivity {
                                     boolean error = jsonObj.getBoolean (AppConfigTags.ERROR);
                                     String message = jsonObj.getString (AppConfigTags.MESSAGE);
                                     if (! error) {
+                                        if (jsonObj.getInt (AppConfigTags.VERSION_UPDATE) > 0) {
+                                            MaterialDialog dialog = new MaterialDialog.Builder (MainActivity.this)
+                                                    .title ("New Update Available")
+                                                    .content (jsonObj.getString (AppConfigTags.UPDATE_MESSAGE))
+                                                    .titleColor (getResources ().getColor (R.color.primary_text))
+                                                    .positiveColor (getResources ().getColor (R.color.primary_text))
+                                                    .contentColor (getResources ().getColor (R.color.primary_text))
+                                                    .negativeColor (getResources ().getColor (R.color.primary_text))
+                                                    .typeface (SetTypeFace.getTypeface (MainActivity.this), SetTypeFace.getTypeface (MainActivity.this))
+                                                    .canceledOnTouchOutside (false)
+                                                    .cancelable (false)
+                                                    .positiveText (R.string.dialog_action_update)
+                                                    .negativeText (R.string.dialog_action_exit)
+                                                    .onPositive (new MaterialDialog.SingleButtonCallback () {
+                                                        @Override
+                                                        public void onClick (@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                                            final String appPackageName = getPackageName ();
+                                                            try {
+                                                                startActivity (new Intent (Intent.ACTION_VIEW, Uri.parse ("market://details?id=" + appPackageName)));
+                                                            } catch (android.content.ActivityNotFoundException anfe) {
+                                                                startActivity (new Intent (Intent.ACTION_VIEW, Uri.parse ("https://play.google.com/store/apps/details?id=" + appPackageName)));
+                                                            }
+                                                        }
+                                                    })
+                                                    .onNegative (new MaterialDialog.SingleButtonCallback () {
+                                                        @Override
+                                                        public void onClick (@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                                            finish ();
+                                                            overridePendingTransition (R.anim.slide_in_left, R.anim.slide_out_right);
+                                                        }
+                                                    }).build ();
+        
+                                            dialog.getActionButton (DialogAction.POSITIVE).setOnClickListener (new CustomListener (MainActivity.this, dialog, DialogAction.POSITIVE));
+                                            dialog.getActionButton (DialogAction.NEGATIVE).setOnClickListener (new CustomListener (MainActivity.this, dialog, DialogAction.NEGATIVE));
+        
+                                            dialog.show ();
+                                        }
+                                        
+                                        
                                         appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.SURVEY_STATUS, jsonObj.getInt (AppConfigTags.SURVEY_STATUS));
                                         if (jsonObj.getInt (AppConfigTags.SURVEY_DAY_ELAPSED) < 7) {
                                             appDetailsPref.putIntPref (MainActivity.this, AppDetailsPref.SURVEY_DAY_ELAPSED, jsonObj.getInt (AppConfigTags.SURVEY_DAY_ELAPSED));
@@ -553,6 +606,8 @@ public class MainActivity extends AppCompatActivity {
                 protected Map<String, String> getParams () throws AuthFailureError {
                     Map<String, String> params = new Hashtable<> ();
                     params.put (AppConfigTags.SURVEY_NUMBER, appDetailsPref.getStringPref (MainActivity.this, AppDetailsPref.SURVEY_NUMBER));
+                    params.put (AppConfigTags.APP_VERSION, String.valueOf (finalPInfo.versionCode));
+                    params.put (AppConfigTags.DEVICE, "ANDROID");
                     Utils.showLog (Log.INFO, AppConfigTags.PARAMETERS_SENT_TO_THE_SERVER, "" + params, true);
                     return params;
                 }
@@ -644,6 +699,36 @@ public class MainActivity extends AppCompatActivity {
                     startActivity (dialogIntent);
                 }
             });
+        }
+    }
+    
+    
+    class CustomListener implements View.OnClickListener {
+        private final MaterialDialog dialog;
+        Activity activity;
+        DialogAction dialogAction;
+        
+        public CustomListener (Activity activity, MaterialDialog dialog, DialogAction dialogAction) {
+            this.dialog = dialog;
+            this.activity = activity;
+            this.dialogAction = dialogAction;
+        }
+        
+        @Override
+        public void onClick (View v) {
+            if (dialogAction == DialogAction.POSITIVE) {
+                final String appPackageName = getPackageName ();
+                try {
+                    startActivity (new Intent (Intent.ACTION_VIEW, Uri.parse ("market://details?id=" + appPackageName)));
+                } catch (android.content.ActivityNotFoundException anfe) {
+                    startActivity (new Intent (Intent.ACTION_VIEW, Uri.parse ("https://play.google.com/store/apps/details?id=" + appPackageName)));
+                }
+            }
+            if (dialogAction == DialogAction.NEGATIVE) {
+                finish ();
+                overridePendingTransition (R.anim.slide_in_left, R.anim.slide_out_right);
+                
+            }
         }
     }
 }

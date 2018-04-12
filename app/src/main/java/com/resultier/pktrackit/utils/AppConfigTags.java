@@ -92,4 +92,10 @@ public class AppConfigTags {
     public static final String ANSWER_9E = "answer_9e";
     public static final String ANSWER_9F = "answer_9f";
     
+    
+    public static final String APP_VERSION = "app_version";
+    public static final String DEVICE = "device";
+    
+    public static final String VERSION_UPDATE = "version_update";
+    public static final String UPDATE_MESSAGE = "update_message";
 }

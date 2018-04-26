@@ -121,13 +121,14 @@
         <b>
             <u>Total number of times</u>
         </b>
-        you used the pouches
+        you used the pouches today
     </string>
     <string name="question5b">
+        About
         <b>
-            <u>Total number of pouches</u>
+            <u>how much of a can</u>
         </b>
-        you used today
+        of your own loose product did you use today
     </string>
     <string name="question5c">What was the
         <b>
@@ -221,13 +222,13 @@
         <b>
             <u>Total Number of times</u>
         </b>
-        you used your own pouches today?
+        you used your own pouches today
     </string>
     <string name="question8b">
         <b>
-            <u>Total Number of pouches</u>
+            <u>Total Number of your own pouches</u>
         </b>
-        you used today?
+        you used today
     </string>
 
     <string name="question9a">Please mark the number that best represents how using the test product
@@ -244,6 +245,38 @@
     <string name="question9g">How likely are you to replace your current pouch product with the test
         product?
     </string>
+
+    <string name="question14">Thinking about all your
+        <b>
+            <u>Test Product</u>
+        </b>
+        use occasions over the past 7 days, what was the
+        <u>least</u>
+        amount of time
+        <b>in minutes</b>
+        you kept the
+        <b>Test Product</b>
+        in your mouth?
+    </string>
+    <string name="question15">Thinking about all your
+        <b>
+            <u>Test Product</u>
+        </b>
+        use occasions over the past 7 days, what was the
+        <u>most</u>
+        amount of time
+        <b>in minutes</b>
+        you kept the
+        <b>Test Product</b>
+        in your mouth?
+    </string>
+    <string name="question16">Are you planning to quit using moist smokeless tobacco products in the
+        next 30 days?
+    </string>
+    <string name="question17">Are you planning to quit using all tobacco products in the next 30
+        days?
+    </string>
+
 
     <string name="please_enter_serial_number">Please enter Serial #</string>
     <string name="please_enter_product_code">Please enter product code</string>

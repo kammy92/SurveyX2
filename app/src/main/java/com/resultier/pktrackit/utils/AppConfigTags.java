@@ -41,6 +41,7 @@ public class AppConfigTags {
     public static final String USER_LOGIN_KEY = "user_login_key";
     public static final String USER_LOGIN_ID = "user_login_id";
     public static final String USER_LOGIN_PASS = "user_login_pass";
+    public static final String USER_GROUP = "user_group";
     public static final String USER_MOBILE = "user_mobile";
     
     public static final String SURVEY_ID = "survey_id";
@@ -91,6 +92,12 @@ public class AppConfigTags {
     public static final String ANSWER_9D = "answer_9d";
     public static final String ANSWER_9E = "answer_9e";
     public static final String ANSWER_9F = "answer_9f";
+    
+    
+    public static final String ANSWER_14 = "answer_14";
+    public static final String ANSWER_15 = "answer_15";
+    public static final String ANSWER_16 = "answer_16";
+    public static final String ANSWER_17 = "answer_17";
     
     
     public static final String APP_VERSION = "app_version";

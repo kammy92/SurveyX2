@@ -191,6 +191,7 @@ public class LoginActivity extends AppCompatActivity {
                                         appDetailsPref.putStringPref (LoginActivity.this, AppDetailsPref.USER_LOGIN_KEY, jsonObj.getString (AppConfigTags.USER_LOGIN_KEY));
                                         appDetailsPref.putStringPref (LoginActivity.this, AppDetailsPref.USER_LOGIN_ID, jsonObj.getString (AppConfigTags.USER_LOGIN_ID));
                                         appDetailsPref.putStringPref (LoginActivity.this, AppDetailsPref.USER_LOGIN_PASS, jsonObj.getString (AppConfigTags.USER_LOGIN_PASS));
+                                        appDetailsPref.putIntPref (LoginActivity.this, AppDetailsPref.USER_GROUP, jsonObj.getInt (AppConfigTags.USER_GROUP));
                                         appDetailsPref.putIntPref (LoginActivity.this, AppDetailsPref.SURVEY_ID, jsonObj.getInt (AppConfigTags.SURVEY_ID));
                                         appDetailsPref.putStringPref (LoginActivity.this, AppDetailsPref.SURVEY_NUMBER, jsonObj.getString (AppConfigTags.SURVEY_NUMBER));
                                         appDetailsPref.putIntPref (LoginActivity.this, AppDetailsPref.SURVEY_STATUS, jsonObj.getInt (AppConfigTags.SURVEY_STATUS));

@@ -10,6 +10,7 @@ public class AppDetailsPref {
     public static String USER_LOGIN_KEY = "user_login_key";
     public static String USER_LOGIN_ID = "user_login_id";
     public static String USER_LOGIN_PASS = "user_login_pass";
+    public static String USER_GROUP = "user_group";
     public static String SURVEY_ID = "survey_id";
     public static String SURVEY_NUMBER = "survey_number";
     public static String SURVEY_STATUS = "survey_status";

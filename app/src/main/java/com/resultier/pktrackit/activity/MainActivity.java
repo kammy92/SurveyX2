@@ -31,7 +31,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.resultier.pktrackit.R;
 import com.resultier.pktrackit.dialog.FinalSurveyDialogFragment;
+import com.resultier.pktrackit.dialog.FinalSurveyDialogFragment2;
 import com.resultier.pktrackit.dialog.SurveyDialogFragment;
+import com.resultier.pktrackit.dialog.SurveyDialogFragment2;
 import com.resultier.pktrackit.utils.AppConfigTags;
 import com.resultier.pktrackit.utils.AppConfigURL;
 import com.resultier.pktrackit.utils.AppDetailsPref;
@@ -190,9 +192,15 @@ public class MainActivity extends AppCompatActivity {
         rlStartSurvey2.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick (View v) {
-                FragmentTransaction ft = getFragmentManager ().beginTransaction ();
-                FinalSurveyDialogFragment frag = FinalSurveyDialogFragment.newInstance ();
-                frag.show (ft, "4");
+                if (appDetailsPref.getIntPref (MainActivity.this, AppDetailsPref.USER_GROUP) == 1) {
+                    FragmentTransaction ft = getFragmentManager ().beginTransaction ();
+                    FinalSurveyDialogFragment frag = FinalSurveyDialogFragment.newInstance ();
+                    frag.show (ft, "4");
+                } else {
+                    FragmentTransaction ft = getFragmentManager ().beginTransaction ();
+                    FinalSurveyDialogFragment2 frag = FinalSurveyDialogFragment2.newInstance ();
+                    frag.show (ft, "4");
+                }
             }
         });
         
@@ -354,12 +362,17 @@ public class MainActivity extends AppCompatActivity {
         rlEndDay.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick (View v) {
-                FragmentTransaction ft = getFragmentManager ().beginTransaction ();
-                SurveyDialogFragment frag = SurveyDialogFragment.newInstance ();
-                frag.show (ft, "4");
+                if (appDetailsPref.getIntPref (MainActivity.this, AppDetailsPref.USER_GROUP) == 1) {
+                    FragmentTransaction ft = getFragmentManager ().beginTransaction ();
+                    SurveyDialogFragment frag = SurveyDialogFragment.newInstance ();
+                    frag.show (ft, "4");
+                } else {
+                    FragmentTransaction ft = getFragmentManager ().beginTransaction ();
+                    SurveyDialogFragment2 frag = SurveyDialogFragment2.newInstance ();
+                    frag.show (ft, "4");
+                }
             }
         });
-        
         
         rlStartSurvey.setOnClickListener (new View.OnClickListener () {
             @Override
@@ -508,35 +521,35 @@ public class MainActivity extends AppCompatActivity {
                                                 rlDayComplete.setVisibility (View.GONE);
                                                 break;
                                             case 1:
-                                                if (jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT) != null) {
-                                                    appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.SURVEY_STARTED_AT, jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT));
-                                                    Calendar c = Calendar.getInstance ();
-                                                    SimpleDateFormat df2 = new SimpleDateFormat ("yyyy-MM-dd", Locale.US);
-//                                                    Log.e ("karman", "diff time : " + (Utils.getDaysBetweenDates (Utils.convertTimeFormat (jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT), "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd"), df2.format (c.getTime ())) + 1));
-//                                                    Log.e ("karman", "days elapsed  : " + jsonObj.getInt (AppConfigTags.SURVEY_DAY_ELAPSED));
-                                                    if ((Utils.getDaysBetweenDates (Utils.convertTimeFormat (jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT), "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd"), df2.format (c.getTime ())) + 1) <= jsonObj.getInt (AppConfigTags.SURVEY_DAY_ELAPSED)) {
-                                                        rlInstructions.setVisibility (View.GONE);
-                                                        rlMain.setVisibility (View.GONE);
-                                                        rlConclusion.setVisibility (View.GONE);
-                                                        rlLabReport.setVisibility (View.GONE);
-                                                        rlSurveyComplete.setVisibility (View.GONE);
-                                                        rlDayComplete.setVisibility (View.VISIBLE);
-                                                    } else {
-                                                        rlInstructions.setVisibility (View.GONE);
-                                                        rlMain.setVisibility (View.VISIBLE);
-                                                        rlConclusion.setVisibility (View.GONE);
-                                                        rlLabReport.setVisibility (View.GONE);
-                                                        rlSurveyComplete.setVisibility (View.GONE);
-                                                        rlDayComplete.setVisibility (View.GONE);
-                                                    }
-                                                } else {
+//                                                if (jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT) != null) {
+//                                                    appDetailsPref.putStringPref (MainActivity.this, AppDetailsPref.SURVEY_STARTED_AT, jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT));
+//                                                    Calendar c = Calendar.getInstance ();
+//                                                    SimpleDateFormat df2 = new SimpleDateFormat ("yyyy-MM-dd", Locale.US);
+////                                                    Log.e ("karman", "diff time : " + (Utils.getDaysBetweenDates (Utils.convertTimeFormat (jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT), "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd"), df2.format (c.getTime ())) + 1));
+////                                                    Log.e ("karman", "days elapsed  : " + jsonObj.getInt (AppConfigTags.SURVEY_DAY_ELAPSED));
+//                                                    if ((Utils.getDaysBetweenDates (Utils.convertTimeFormat (jsonObj.getString (AppConfigTags.SURVEY_STARTED_AT), "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd"), df2.format (c.getTime ())) + 1) <= jsonObj.getInt (AppConfigTags.SURVEY_DAY_ELAPSED)) {
+//                                                        rlInstructions.setVisibility (View.GONE);
+//                                                        rlMain.setVisibility (View.GONE);
+//                                                        rlConclusion.setVisibility (View.GONE);
+//                                                        rlLabReport.setVisibility (View.GONE);
+//                                                        rlSurveyComplete.setVisibility (View.GONE);
+//                                                        rlDayComplete.setVisibility (View.VISIBLE);
+//                                                    } else {
+//                                                        rlInstructions.setVisibility (View.GONE);
+//                                                        rlMain.setVisibility (View.VISIBLE);
+//                                                        rlConclusion.setVisibility (View.GONE);
+//                                                        rlLabReport.setVisibility (View.GONE);
+//                                                        rlSurveyComplete.setVisibility (View.GONE);
+//                                                        rlDayComplete.setVisibility (View.GONE);
+//                                                    }
+//                                                } else {
                                                     rlInstructions.setVisibility (View.GONE);
                                                     rlMain.setVisibility (View.VISIBLE);
                                                     rlConclusion.setVisibility (View.GONE);
                                                     rlLabReport.setVisibility (View.GONE);
                                                     rlSurveyComplete.setVisibility (View.GONE);
                                                     rlDayComplete.setVisibility (View.GONE);
-                                                }
+//                                                }
                                                 break;
                                             case 2:
                                                 rlInstructions.setVisibility (View.GONE);
@@ -701,7 +714,6 @@ public class MainActivity extends AppCompatActivity {
             });
         }
     }
-    
     
     class CustomListener implements View.OnClickListener {
         private final MaterialDialog dialog;

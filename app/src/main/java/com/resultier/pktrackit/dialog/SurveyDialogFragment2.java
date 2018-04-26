@@ -694,10 +694,10 @@ public class SurveyDialogFragment2 extends DialogFragment {
                     if (answer7.length () > 0 &&
                             answer7a.length () > 0 &&
                             answer7b.length () > 0) {
-                        if (cbAnswer7a1.isChecked () && answer7c.length () > 0) {
-                            bt3 = 1;
-                        } else {
+                        if (cbAnswer7a1.isChecked () && answer7c.length () == 0) {
                             bt3 = 2;
+                        } else {
+                            bt3 = 1;
                         }
                     } else {
                         bt3 = 2;

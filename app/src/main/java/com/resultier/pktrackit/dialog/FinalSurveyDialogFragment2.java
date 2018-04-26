@@ -1017,6 +1017,22 @@ public class FinalSurveyDialogFragment2 extends DialogFragment {
                 } else {
                     llAnswer9f.setBackground (getResources ().getDrawable (R.drawable.bg_question));
                 }
+    
+    
+                int vl2 = 0; // validation for least time in answer 5
+    
+    
+                if (answer14.length () > 0 && answer15.length () > 0) {
+                    if (Integer.parseInt (answer14) > Integer.parseInt (answer15)) {
+                        vl2 = 2;
+                        llAnswer14.setBackground (getResources ().getDrawable (R.drawable.bg_question_red));
+                        llAnswer15.setBackground (getResources ().getDrawable (R.drawable.bg_question_red));
+                        Utils.showToast (getActivity (), "Least time cannot be greater than most time", false);
+                    } else {
+                        vl2 = 1;
+                    }
+                }
+                
                 
                 if (appDetailsPref.getIntPref (getActivity (), AppDetailsPref.WEEK_NUMBER) == 6) {
                     if (answer14.length () > 0 &&
@@ -1028,8 +1044,10 @@ public class FinalSurveyDialogFragment2 extends DialogFragment {
                             answer9d.length () > 0 &&
                             answer9e.length () > 0 &&
                             answer9f.length () > 0 &&
-                            answer16.length () > 0) {
+                            answer16.length () > 0 && vl2 != 2) {
                         if (answer16.equalsIgnoreCase (rb16Yes.getText ().toString ().trim ()) && answer17.length () > 0) {
+                            submitConclusionSurvey (answer14, answer15, answer9, answer9a, answer9b, answer9c, answer9d, answer9e, answer9f, answer16, answer17);
+                        } else if (answer16.equalsIgnoreCase (rb16No.getText ().toString ().trim ())) {
                             submitConclusionSurvey (answer14, answer15, answer9, answer9a, answer9b, answer9c, answer9d, answer9e, answer9f, answer16, answer17);
                         }
                     }
@@ -1042,11 +1060,10 @@ public class FinalSurveyDialogFragment2 extends DialogFragment {
                             answer9c.length () > 0 &&
                             answer9d.length () > 0 &&
                             answer9e.length () > 0 &&
-                            answer9f.length () > 0) {
+                            answer9f.length () > 0 && vl2 != 2) {
                         submitConclusionSurvey (answer14, answer15, answer9, answer9a, answer9b, answer9c, answer9d, answer9e, answer9f, answer16, answer17);
                     }
                 }
-                
             }
         });
     }

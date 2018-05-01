@@ -192,14 +192,16 @@ public class MainActivity extends AppCompatActivity {
         rlStartSurvey2.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick (View v) {
-                if (appDetailsPref.getIntPref (MainActivity.this, AppDetailsPref.USER_GROUP) == 1) {
-                    FragmentTransaction ft = getFragmentManager ().beginTransaction ();
-                    FinalSurveyDialogFragment frag = FinalSurveyDialogFragment.newInstance ();
-                    frag.show (ft, "4");
-                } else {
-                    FragmentTransaction ft = getFragmentManager ().beginTransaction ();
-                    FinalSurveyDialogFragment2 frag = FinalSurveyDialogFragment2.newInstance ();
-                    frag.show (ft, "4");
+                FragmentTransaction ft = getFragmentManager ().beginTransaction ();
+                switch (appDetailsPref.getIntPref (MainActivity.this, AppDetailsPref.USER_GROUP)) {
+                    case 1:
+                        FinalSurveyDialogFragment frag = FinalSurveyDialogFragment.newInstance ();
+                        frag.show (ft, "4");
+                        break;
+                    case 2:
+                        FinalSurveyDialogFragment2 frag2 = FinalSurveyDialogFragment2.newInstance ();
+                        frag2.show (ft, "4");
+                        break;
                 }
             }
         });
@@ -362,14 +364,16 @@ public class MainActivity extends AppCompatActivity {
         rlEndDay.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick (View v) {
-                if (appDetailsPref.getIntPref (MainActivity.this, AppDetailsPref.USER_GROUP) == 1) {
-                    FragmentTransaction ft = getFragmentManager ().beginTransaction ();
-                    SurveyDialogFragment frag = SurveyDialogFragment.newInstance ();
-                    frag.show (ft, "4");
-                } else {
-                    FragmentTransaction ft = getFragmentManager ().beginTransaction ();
-                    SurveyDialogFragment2 frag = SurveyDialogFragment2.newInstance ();
-                    frag.show (ft, "4");
+                FragmentTransaction ft = getFragmentManager ().beginTransaction ();
+                switch (appDetailsPref.getIntPref (MainActivity.this, AppDetailsPref.USER_GROUP)) {
+                    case 1:
+                        SurveyDialogFragment frag = SurveyDialogFragment.newInstance ();
+                        frag.show (ft, "4");
+                        break;
+                    case 2:
+                        SurveyDialogFragment2 frag2 = SurveyDialogFragment2.newInstance ();
+                        frag2.show (ft, "4");
+                        break;
                 }
             }
         });
@@ -495,10 +499,10 @@ public class MainActivity extends AppCompatActivity {
                                                             overridePendingTransition (R.anim.slide_in_left, R.anim.slide_out_right);
                                                         }
                                                     }).build ();
-        
+    
                                             dialog.getActionButton (DialogAction.POSITIVE).setOnClickListener (new CustomListener (MainActivity.this, dialog, DialogAction.POSITIVE));
                                             dialog.getActionButton (DialogAction.NEGATIVE).setOnClickListener (new CustomListener (MainActivity.this, dialog, DialogAction.NEGATIVE));
-        
+    
                                             dialog.show ();
                                         }
                                         
@@ -543,12 +547,12 @@ public class MainActivity extends AppCompatActivity {
 //                                                        rlDayComplete.setVisibility (View.GONE);
 //                                                    }
 //                                                } else {
-                                                    rlInstructions.setVisibility (View.GONE);
-                                                    rlMain.setVisibility (View.VISIBLE);
-                                                    rlConclusion.setVisibility (View.GONE);
-                                                    rlLabReport.setVisibility (View.GONE);
-                                                    rlSurveyComplete.setVisibility (View.GONE);
-                                                    rlDayComplete.setVisibility (View.GONE);
+                                                rlInstructions.setVisibility (View.GONE);
+                                                rlMain.setVisibility (View.VISIBLE);
+                                                rlConclusion.setVisibility (View.GONE);
+                                                rlLabReport.setVisibility (View.GONE);
+                                                rlSurveyComplete.setVisibility (View.GONE);
+                                                rlDayComplete.setVisibility (View.GONE);
 //                                                }
                                                 break;
                                             case 2:

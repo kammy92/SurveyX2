@@ -289,8 +289,8 @@ public class FinalSurveyDialogFragment2 extends DialogFragment {
         appDetailsPref = AppDetailsPref.getInstance ();
         progressDialog = new ProgressDialog (getActivity ());
         Utils.setTypefaceToAllViews (getActivity (), ivCancel);
-        
-        if (appDetailsPref.getIntPref (getActivity (), AppDetailsPref.WEEK_NUMBER) == 6) {
+    
+        if (appDetailsPref.getIntPref (getActivity (), AppDetailsPref.WEEK_NUMBER) == 5) {
             llAnswer16.setVisibility (View.VISIBLE);
         } else {
             llAnswer16.setVisibility (View.GONE);
@@ -961,8 +961,8 @@ public class FinalSurveyDialogFragment2 extends DialogFragment {
                 } else {
                     llAnswer15.setBackground (getResources ().getDrawable (R.drawable.bg_question));
                 }
-                
-                if (appDetailsPref.getIntPref (getActivity (), AppDetailsPref.WEEK_NUMBER) == 6) {
+    
+                if (appDetailsPref.getIntPref (getActivity (), AppDetailsPref.WEEK_NUMBER) == 5) {
                     if (answer16.length () == 0) {
                         llAnswer16.setBackground (getResources ().getDrawable (R.drawable.bg_question_red));
                     } else {
@@ -1032,9 +1032,9 @@ public class FinalSurveyDialogFragment2 extends DialogFragment {
                         vl2 = 1;
                     }
                 }
-                
-                
-                if (appDetailsPref.getIntPref (getActivity (), AppDetailsPref.WEEK_NUMBER) == 6) {
+    
+    
+                if (appDetailsPref.getIntPref (getActivity (), AppDetailsPref.WEEK_NUMBER) == 5) {
                     if (answer14.length () > 0 &&
                             answer15.length () > 0 &&
                             answer9.length () > 0 &&
